@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <style>[x-cloak]{ display:none; }</style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+<script>hljs.highlightAll();</script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            gsap.to("#hero", {
+                scrollTrigger: {
+    trigger: "#features",
+    start: "top 100%",
+    end: "top 10%",
+    scrub: true
+  },
+  opacity:0,
+  scrub: true
+});
+
+// gsap.to("#learnMore", {
+//                 scrollTrigger: {
+//     trigger: "#features",
+//     start: "top 100%",
+//     end: "top 50%",
+//     scrub: true
+//   },
+//   y: -150,
+//   opacity:0,
+//   scrub: true
+// });
+
+gsap.to("#learnMore", {
+                scrollTrigger: {
+    trigger: "#features",
+    start: "top 20%",
+    end: "top 0%",
+    scrub: true
+  },
+  y: 150,
+  opacity:0,
+  scrub: true
+});
+        });
+    </script>
+    {tailwindcss}
+</head>
+<body class="bg-black">
+    <include src="header.html"></include>
+    {slot}
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
