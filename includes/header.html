@@ -1,43 +1,84 @@
-<section class="box-border fixed z-30 flex items-center w-full h-20 leading-10 text-center">
+
+<section x-data="{ 
+    hovered: 'home',
+    active: 'home',
+    lastKnownScrollY: 0,
+    ticking: false,
+    calculateMarkerPosition(hoveredElement){
+        console.log('run');
+        const markerElement = document.getElementById('marker');
+
+        // Get the width, height, top, and left position of the hovered element
+        const width = hoveredElement.offsetWidth;
+        const height = hoveredElement.offsetHeight;
+        const top = hoveredElement.offsetTop;
+        const left = hoveredElement.offsetLeft;
+
+        console.log(hoveredElement);
+        console.log('top: ' + top + ' left: ' + left);
+
+        // Apply the values to the marker element
+        markerElement.style.width = `${width}px`;
+        markerElement.style.height = `${height}px`;
+        markerElement.style.top = `${top}px`;
+        markerElement.style.left = `${left}px`;
+    } 
+}" 
+x-init="
+
+    window.addEventListener('scroll', function(e) {
+        this.lastKnownScrollY = window.scrollY;
+
+        if(window.scrollY > 100) {
+            document.getElementById('nav-border').classList.remove('opacity-0');
+        } else {
+            document.getElementById('nav-border').classList.add('opacity-0');
+        }
+
+        if (!this.ticking) {
+            window.requestAnimationFrame(function() {
+                const targetElement = document.getElementById('nav-border-animated');
+                const maxScrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+                
+                // Calculate width as a percentage of how far the user has scrolled
+                const widthPercentage = (this.lastKnownScrollY / maxScrollHeight) * 100;
+
+                targetElement.style.width = `${Math.min(widthPercentage, 100)}%`;
+                this.ticking = false;
+                this.ticking = false;
+            });
+
+            this.ticking = true;
+        }
+    });
+
+    // window.addEventListener('scroll', function(){
+    //     // get the scroll position
+    //     let scrollPos = window.scrollY;
+
+    //     // get the target element by its ID or any other selector
+    //     const targetElement = document.getElementById('nav-border');
+
+    //     // set the width based on the scroll position
+    //     targetElement.style.width = Math.min(scrollPos, 100) + '%';
+    // });
+    document.getElementById('marker').classList.remove('hidden');
+    setTimeout(function(){
+        document.getElementById('marker').classList.add('ease-out', 'duration-300');
+    }, 10);
+    calculateMarkerPosition(document.getElementById('nav-items').firstElementChild);
+    
+" class="box-border fixed z-30 flex items-center w-full h-20 leading-10 text-center bg-opacity-50 bg-gradient-to-b from-black/90 to-black/10 backdrop-blur-md">
+    <div id="nav-border" class="absolute bottom-0 left-0 w-full h-px duration-500 ease-out opacity-0">
+        <div class="relative w-full h-px bg-white opacity-20"></div>
+    </div>
+    <div id="nav-border-animated" class="absolute bg-yellow-300 h-0.5 bottom-0 left-0 w-0"></div>
     <div class="w-full max-w-6xl px-6 mx-auto leading-10 text-center md:px-8">
         <div class="box-border flex flex-wrap items-center justify-between -mx-4 text-indigo-900">
             <div class="relative flex items-center w-auto px-4 leading-10 lg:flex-grow-0 lg:flex-shrink-0 lg:text-left">
                <include src="logo.html"></include>
             </div>
-            <div x-data="{ 
-                    hovered: 'home',
-                    active: 'home',
-                    calculateMarkerPosition(hoveredElement){
-                        console.log('run');
-                        const markerElement = document.getElementById('marker');
-
-                        // Get the width, height, top, and left position of the hovered element
-                        const width = hoveredElement.offsetWidth;
-                        const height = hoveredElement.offsetHeight;
-                        const top = hoveredElement.offsetTop;
-                        const left = hoveredElement.offsetLeft;
-
-                        console.log(hoveredElement);
-                        console.log('top: ' + top + ' left: ' + left);
-
-                        // Apply the values to the marker element
-                        markerElement.style.width = `${width}px`;
-                        markerElement.style.height = `${height}px`;
-                        markerElement.style.top = `${top}px`;
-                        markerElement.style.left = `${left}px`;
-                    } 
-                }" 
-                x-init="
-                    $watch('hovered', function(){
-
-                    });
-                    document.getElementById('marker').classList.remove('hidden');
-                    setTimeout(function(){
-                        document.getElementById('marker').classList.add('ease-out', 'duration-300');
-                    }, 10);
-                    calculateMarkerPosition(document.getElementById('nav-items').firstElementChild);
-                    
-                "
+            <div 
                 class="absolute z-50 flex-col items-center justify-center hidden w-full h-auto text-xs font-semibold text-center text-gray-400 -translate-x-1/2 rounded-full backdrop-blur-sm md:w-auto md:h-10 left-1/2 md:flex-row md:items-center md:flex" x-cloak
             >
                 <div class="absolute top-0 right-0 w-full h-px -translate-y-px opacity-60 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>

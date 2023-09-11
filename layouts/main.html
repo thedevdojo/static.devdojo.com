@@ -1,59 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
-    <style>[x-cloak]{ display:none; }</style>
+    <style>[x-cloak] { display: none; }</style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/dracula.min.css">
+    <style>
+        .hljs {
+            color: #f8e164;
+            padding-top: 15px !important;
+            padding-left: 20px !important;
+            padding-right: 150px !important;
+            padding-bottom: 150px !important;
+
+        }
+
+        .hljs-addition,
+        .hljs-code,
+        .hljs-string,
+        .hljs-title.class_.inherited__ {
+            color: #f8e164 !important;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+    <script>
+        hljs.highlightAll();
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-
-<script>hljs.highlightAll();</script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function(){
-            gsap.to("#hero", {
-                scrollTrigger: {
-    trigger: "#features",
-    start: "top 100%",
-    end: "top 10%",
-    scrub: true
-  },
-  opacity:0,
-  scrub: true
-});
-
-// gsap.to("#learnMore", {
-//                 scrollTrigger: {
-//     trigger: "#features",
-//     start: "top 100%",
-//     end: "top 50%",
-//     scrub: true
-//   },
-//   y: -150,
-//   opacity:0,
-//   scrub: true
-// });
-
-gsap.to("#learnMore", {
-                scrollTrigger: {
-    trigger: "#features",
-    start: "top 20%",
-    end: "top 0%",
-    scrub: true
-  },
-  y: 150,
-  opacity:0,
-  scrub: true
-});
-        });
-    </script>
+    
     {tailwindcss}
+
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+            animation: {
+                marquee: 'marquee 35s linear infinite',
+                marquee2: 'marquee2 35s linear infinite',
+                border: 'background ease infinite',
+              },
+              keyframes: {
+                marquee: {
+                  '0%': { transform: 'translateX(0%)' },
+                  '100%': { transform: 'translateX(100%)' },
+                },
+                marquee2: {
+                  '0%': { transform: 'translateX(-100%)' },
+                  '100%': { transform: 'translateX(0%)' },
+                },
+                background: {
+                  '0%, 100%': { backgroundPosition: '0% 50%' },
+                  '50%': { backgroundPosition: '100% 50%' },
+                },
+              },
+        }
+          }
+        }
+      </script>
+
+
 </head>
+
 <body class="bg-black">
+
+    <!-- <div class="fixed bottom-0 right-0 z-50">
+        <div id="yay" class="relative w-48 h-full translate-y-full">
+            <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGlrdmRveXRndjQ1NTYxdzcybm5va3FydzFrdjhqeWJwMXYxbjNrMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/Xmuk89ubcVajZ7CERO/giphy.gif" class="w-auto h-full" />
+        </div>
+    </div> -->
+
     <include src="header.html"></include>
     {slot}
     <script src="/assets/js/main.js"></script>
 </body>
+
 </html>
