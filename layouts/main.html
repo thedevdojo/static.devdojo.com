@@ -11,11 +11,20 @@
     <style>
         .hljs {
             color: #f8e164;
-            padding-top: 15px !important;
+        }
+
+        .features-tailwind.hljs{
+          overflow:hidden;
+          padding-top: 15px !important;
             padding-left: 20px !important;
             padding-right: 150px !important;
             padding-bottom: 150px !important;
+        }
 
+        .features-layouts.hljs{
+          padding-top: 30px !important;
+          padding-left: 45px !important;
+          padding-bottom: 30px !important;
         }
 
         .hljs-addition,
@@ -76,7 +85,7 @@
 
     <include src="header.html"></include>
     {slot}
-    <script src="/assets/js/main.js"></script>
+    <script src="{ url('/assets/js/main.js') }"></script>
 </body>
 
 </html>

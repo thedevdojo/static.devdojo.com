@@ -13,15 +13,16 @@ document.addEventListener("DOMContentLoaded", function() {
         radialElements[i].style.backgroundImage = `radial-gradient(circle at 0px 0px, rgba(32, 32, 42, 0.9) 0%, rgba(215, 215, 255, 0.01) 85%, transparent 100%)`;
     }
     window.addEventListener('mousemove', function(event) {
-        if (event.target.classList.contains('radial-background')) {
+        if (event.target.classList.contains('radial-background') || event.target.closest('.radial-background')) {
+            let element = event.target.classList.contains('radial-background') ? event.target : event.target.closest('.radial-background');
             let {
                 clientX,
                 clientY
             } = event;
-            const rect = event.target.getBoundingClientRect();
+            const rect = element.getBoundingClientRect();
             clientX = clientX - rect.left;
             clientY = clientY - rect.top;
-            event.target.style.backgroundImage = `radial-gradient(circle at ${clientX}px ${clientY}px, rgba(32, 32, 42, 0.9) 0%, rgba(215, 215, 255, 0.01) 85%, transparent 100%)`;
+            element.style.backgroundImage = `radial-gradient(circle at ${clientX}px ${clientY}px, rgba(32, 32, 42, 0.9) 0%, rgba(215, 215, 255, 0.01) 85%, transparent 100%)`;
         }
     });
     
@@ -75,7 +76,6 @@ document.addEventListener("DOMContentLoaded", function() {
             start: "top 80%",
             end: "bottom 60%",
             scrub: true,
-            markers: true
         },
         y: -150,
         opacity: 1,
@@ -84,10 +84,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     gsap.to("#radical", {
         scrollTrigger: {
-            trigger: "#features-content",
-            start: "top 90%",
-            end: "bottom 80%",
-            scrub: true,
+            trigger: "#features-header",
+            start: "top 80%",
+            end: "bottom 50%",
+            scrub: true
         },
         x: -50,
         opacity: 1,
