@@ -21,7 +21,7 @@
             </div>
         </div>
         
-        <div class="relative z-20 flex flex-col h-full max-w-6xl pt-32 mx-auto text-center justify-stretch">
+        <div class="relative z-20 flex flex-col h-full max-w-6xl mx-auto text-center pt-36 justify-stretch">
             
             <div class="flex items-center justify-center mb-7">
 
@@ -31,32 +31,42 @@
             </div>
             <div id="hero-main" class="relative flex flex-col justify-center">
                 <div class="absolute bottom-0 left-0 w-56 h-56 translate-x-16 -translate-y-7">
-                    <img class="scale-100 rotate-1" src="https://i.giphy.com/8ynOqCkWDpf5C.gif" />
+                    <img class="scale-100 bounce-image rotate-1" src="https://i.giphy.com/8ynOqCkWDpf5C.gif" />
                 </div>
                 <div class="absolute bottom-0 right-0 w-48 h-48 -translate-x-10 -translate-y-8 rotate-12">
-                    <img class="scale-100 rotate-1" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdWI2d21oNWlxaGJvYXduNXowaXFrd3Z4d2VtZnR6ZnUxcWIxN3JmbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/3oEjHBvwWYmy39zCfK/giphy.gif" />
+                    <img class="scale-100 bounce-image rotate-1" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdWI2d21oNWlxaGJvYXduNXowaXFrd3Z4d2VtZnR6ZnUxcWIxN3JmbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/3oEjHBvwWYmy39zCfK/giphy.gif" />
                 </div>
-                <h1 class="inline-block w-auto max-w-2xl mx-auto font-light text-transparent pb-7 bg-gradient-to-r text-8xl from-neutral-400 via-white to-neutral-500 bg-clip-text">Static Websites<br> <span class="relative text-transparent bg-gradient-to-r text-8xl from-neutral-400 via-white to-neutral-500 bg-clip-text"><span class="absolute bottom-0 hidden w-full h-5 translate-y-2 bg-cover rounded-full" style="background-image:url('/assets/images/underline.svg')"></span>Made Easy</span></h1>
-                <p class="max-w-lg mx-auto leading-7 mb-7 text-white/80">We're bringing the fun back into building static HTML websites. <br>Try it now by installing the NPM package below.</p>
+                <h1 class="flex items-center justify-center w-auto max-w-5xl pb-0 pr-5 mx-auto font-semibold text-transparent pistol-font bg-gradient-to-r text-8xl from-neutral-400 via-white to-neutral-500 bg-clip-text">Static Websites</h1>
+                <div class="flex items-center justify-center pb-3">
+                    <img src="/assets/images/made-easy-text.gif" class="w-full h-auto max-w-lg" />
+                </div>
+                <p class="max-w-lg mx-auto mb-12 leading-7 text-white/80">We're bringing the fun back into building static HTML websites. <br>Try it now by installing the NPM package below.</p>
             </div>
             <div class="relative w-full max-w-xl mx-auto">
                 
-                <div class="inline-block w-full h-auto mx-auto overflow-hidden relative font-mono text-base font-medium text-left text-white ring-1 ring-gray-200/[15%] bg-gradient-to-br from-neutral-900 to-black rounded-lg shadow-sm">
+                <div class="relative inline-block w-full h-auto mx-auto overflow-hidden font-mono text-base font-medium text-left text-white duration-300 ease-out shadow-sm hover:scale-[1.03] group bg-gradient-to-br from-neutral-900 to-black">
                     
-                    <div class="flex items-center w-full h-12 pl-4 bg-transparent opacity-80">
-                        <div class="flex space-x-1.5">
-                            <div class="w-3 h-3 bg-red-400 rounded-full"></div>
-                            <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                            <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+                    <include src="ui-header.html"></include>
+                    <div class="relative px-5 pt-5 pb-14 border-l-[3px] border-r-[3px] border-b-[5px] border-gray-300/[75%]">
+                        <p class=""><span class="inline-block mr-3.5 select-none selection-none text-white/50">$</span><span class="text-[#70f179]">npm install -g @devdojo/static</span></p>
+                        <p class="mt-0.5"><span class="inline-block mr-3.5 select-none selection-none text-white/50">$</span><span class="text-[#70f179]">static new folderName</span></p>
+                        
+                        
+                        <div class="absolute bottom-0 left-0 w-full pl-3 flex text-gray-900/80 border-t border-gray-300/[75%] py-px text-[0.65rem] bg-gray-300/[75%]">
+                            
+                            <span class="absolute inset-0 w-full h-full opacity-40">
+                                <span class="absolute bottom-0 left-0 block w-full h-0.5 translate-y-0.5 bg-gray-200"></span>
+                                <span class="absolute bottom-0 right-0 block w-0.5 h-full translate-y-0.5 bg-gray-200"></span>
+                                <span class="absolute top-0 left-0 block w-full h-0.5 translate-y-0.5 bg-black"></span>
+                                <span class="absolute top-0 left-0 block w-0.5 h-full translate-y-0.5 bg-black"></span>
+                                
+                            </span>
+                            <span class="flex items-center justify-start w-full h-full mt-1 font-medium">Your new site will open up on localhost:3000</span>
                         </div>
-                    </div>
-                    <div class="relative px-5 pt-2 pb-14">
-                        <p class=""><span class="inline-block mr-3 select-none selection-none text-white/50">$</span>npm install -g @devdojo/static</p>
-                        <p class="mt-1"><span class="inline-block mr-3 select-none selection-none text-white/50">$</span>static new folderName</p>
-                        <p class="absolute bottom-0 left-0 w-full px-5 text-white/60 py-1 text-[0.65rem] bg-neutral-800">
-                            <span     
-                        class="absolute top-0 w-full left-0 px-1.5 z-10 h-px duration-300 ease-out"><span class="relative block w-full h-px bg-gradient-to-r md:from-white/0 md:via-white/20 md:to-white/0"></span></span>
-                            Your new site will open up on localhost:3000</p>
+
+                        <div class="absolute bottom-0 right-0 cursor-nwse-resize">
+                            <svg class="w-3.5 h-3.5 opacity-100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23.074 23.01h-3.54l2.36-2.36 1.18-1.18v3.54Z" fill="#adadad"/><path d="M10.093 23.01h2.36l10.62-10.62v-2.361l-12.98 12.98Z" fill="#353535"/><path d="M17.174 23.01h2.36l3.54-3.54v-2.36l-5.9 5.9Z" fill="#353535"/><path d="M3.013 23.01h2.36l17.7-17.701v-2.36l-20.06 20.06Z" fill="#353535"/><path d="M7.733 23.01h2.36l12.98-12.981v-2.36l-15.34 15.34Z" fill="white"/><path d="M14.813 23.01h2.36l5.9-5.9v-2.36l-8.26 8.26Z" fill="white"/><path d="M.653 23.01h2.36l20.06-20.061V.589L.654 23.008Z" fill="white"/><path d="M5.373 23.01h2.36l15.34-15.341v-2.36l-17.7 17.7Z" fill="#adadad"/><path d="M12.453 23.01h2.36l8.26-8.26v-2.36l-10.62 10.62Z" fill="#adadad"/></svg>
+                        </div>
                     </div>
                 </div>
             </div>

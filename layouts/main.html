@@ -17,8 +17,10 @@
           overflow:hidden;
           padding-top: 15px !important;
             padding-left: 20px !important;
-            padding-right: 150px !important;
+            padding-right: 190px !important;
             padding-bottom: 150px !important;
+            background-size:top right;
+            /* background-image:url('/assets/images/page.svg'); */
         }
 
         .features-layouts.hljs{
@@ -33,6 +35,24 @@
         .hljs-title.class_.inherited__ {
             color: #f8e164 !important;
         }
+
+        @font-face {
+          font-family: 'pistoleerhalfital';
+          src:url('/fonts/pistoleerhalfital.woff') format('woff'),
+              url('/fonts/pistoleerhalfital.woff2') format('woff2'),
+              url('/fonts/pistoleerhalfital.svg#pistoleerhalfital') format('svg'),
+              url('/fonts/pistoleerhalfital.eot'),
+              url('/fonts/pistoleerhalfital.eot?#iefix') format('embedded-opentype'),
+              url('/fonts/pistoleerhalfital.ttf') format('truetype');
+
+          font-weight: normal;
+          font-style: normal;
+          font-display: swap;
+      }
+
+      .pistol-font { 
+        font-family: 'pistoleerhalfital';
+      }  
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
 
@@ -41,6 +61,8 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.5"></script>
+    <script src="https://unpkg.com/htmx.org/dist/ext/alpine-morph.js"></script>
     
     {tailwindcss}
 
@@ -72,20 +94,14 @@
         }
       </script>
 
-
 </head>
-
 <body class="bg-black">
-
-    <!-- <div class="fixed bottom-0 right-0 z-50">
-        <div id="yay" class="relative w-48 h-full translate-y-full">
-            <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGlrdmRveXRndjQ1NTYxdzcybm5va3FydzFrdjhqeWJwMXYxbjNrMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/Xmuk89ubcVajZ7CERO/giphy.gif" class="w-auto h-full" />
-        </div>
-    </div> -->
-
-    <include src="header.html"></include>
-    {slot}
+    <div x-data="{ route: '/' }" id="site">
+      <include src="header.html"></include>
+      <div id="site-content">
+        {slot}
+      </div>
+    </div>
     <script src="{ url('/assets/js/main.js') }"></script>
 </body>
-
 </html>

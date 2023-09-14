@@ -1,8 +1,10 @@
 // Add your javascript here
 
 import Alpine from 'alpinejs'
-
+import morph from '@alpinejs/morph'
+ 
 window.Alpine = Alpine
+Alpine.plugin(morph)
 
 Alpine.start()
 
@@ -57,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
         opacity: 0,
         scrub: true
     });
-    gsap.fromTo("#hero-main img", {
+    gsap.fromTo("#hero-main img.bounce-image", {
         scale: 0.8
     }, {
         scale: 1,

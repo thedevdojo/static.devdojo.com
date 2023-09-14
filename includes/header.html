@@ -1,9 +1,16 @@
 
 <section x-data="{ 
-    hovered: 'home',
+    hovered: '',
     active: 'home',
     lastKnownScrollY: 0,
     ticking: false,
+    markerPosition: {
+        width: 0,
+        height: 0,
+        left: 0,
+        right: 0
+    },
+    fullWidth: false,
     calculateMarkerPosition(hoveredElement){
         console.log('run');
         const markerElement = document.getElementById('marker');
@@ -15,16 +22,34 @@
         const left = hoveredElement.offsetLeft;
 
         console.log(hoveredElement);
-        console.log('top: ' + top + ' left: ' + left);
+        console.log('top: ' + top + ' w: ' + width);
 
         // Apply the values to the marker element
-        markerElement.style.width = `${width}px`;
-        markerElement.style.height = `${height}px`;
-        markerElement.style.top = `${top}px`;
-        markerElement.style.left = `${left}px`;
-    } 
+        this.markerPosition.width = width;
+        this.markerPosition.height = height;
+        this.markerPosition.top = top;
+        this.markerPosition.left = left;
+    },
+    scrollTop(){
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }
 }" 
 x-init="
+
+    if(window.location.pathname.includes('docs')){
+        fullWidth = true;
+    }
+
+    $watch('active', function(value){
+        scrollTop();
+        setTimeout(function(){
+            calculateMarkerPosition(document.querySelector('[data-' + value +']'));
+        }, 10);
+    });
 
     window.addEventListener('scroll', function(e) {
         this.lastKnownScrollY = window.scrollY;
@@ -52,30 +77,24 @@ x-init="
         }
     });
 
-    // window.addEventListener('scroll', function(){
-    //     // get the scroll position
-    //     let scrollPos = window.scrollY;
-
-    //     // get the target element by its ID or any other selector
-    //     const targetElement = document.getElementById('nav-border');
-
-    //     // set the width based on the scroll position
-    //     targetElement.style.width = Math.min(scrollPos, 100) + '%';
-    // });
-    document.getElementById('marker').classList.remove('hidden');
+    
+    
+    setTimeout(function(){
+        calculateMarkerPosition(document.querySelector('[data-' + active +']'));
+    }, 10);
     setTimeout(function(){
         document.getElementById('marker').classList.add('ease-out', 'duration-300');
-    }, 10);
-    calculateMarkerPosition(document.getElementById('nav-items').firstElementChild);
+    }, 100);
+    
     
 " class="box-border fixed z-30 flex items-center w-full h-20 leading-10 text-center bg-opacity-50 bg-gradient-to-b from-black/90 to-black/10 backdrop-blur-md">
     <div id="nav-border" class="absolute bottom-0 left-0 w-full h-px duration-500 ease-out opacity-0">
         <div class="relative w-full h-px bg-white opacity-20"></div>
     </div>
     <div id="nav-border-animated" class="absolute bg-yellow-300 h-0.5 bottom-0 left-0 w-0"></div>
-    <div class="w-full max-w-6xl px-6 mx-auto leading-10 text-center md:px-8">
+    <div id="nav-container" :class="{ 'max-w-6xl': !fullWidth, 'max-w-7xl' : fullWidth }" class="w-full px-6 mx-auto leading-10 text-center duration-300 ease-out md:px-8" x-cloak>
         <div class="box-border flex flex-wrap items-center justify-between -mx-4 text-indigo-900">
-            <div class="relative flex items-center w-auto px-4 leading-10 lg:flex-grow-0 lg:flex-shrink-0 lg:text-left">
+            <div class="relative flex items-center w-auto leading-10 lg:flex-grow-0 lg:flex-shrink-0 lg:text-left">
                <include src="logo.html"></include>
             </div>
             <div 
@@ -83,37 +102,47 @@ x-init="
             >
                 <div class="absolute top-0 right-0 w-full h-px -translate-y-px opacity-60 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
                 <div class="absolute bottom-0 left-0 w-full h-px translate-y-px opacity-60 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-                <div id="marker" class="absolute top-0 left-0 hidden w-auto h-auto rounded-full bg-white/[7%] backdrop-blur-lg"></div>
+                <div id="marker" class="absolute top-0 z-20 left-0 w-auto h-auto rounded-full bg-white/[7%] backdrop-blur-lg ease-out duration-300" 
+                    :style="'width:' + markerPosition.width + 'px; height:' + markerPosition.height + 'px; top:' + markerPosition.top + 'px; left:' + markerPosition.left + 'px;'"
+                    x-cloak></div>
                 <div id="nav-items" class="relative z-50 flex-col  items-center justify-center w-full h-auto px-2 py-[5px] text-xs font-semibold text-center text-gray-400 rounded-full ring-1 ring-gray-200/[15%] bg-white/[8%] md:w-auto md:h-10 md:flex-row md:items-center">
-                    <a href="/" @mouseenter="calculateMarkerPosition($el); hovered='home'" class="relative inline-flex items-center flex-shrink-0 w-full h-full px-3 py-5 leading-tight text-center text-white rounded-full group md:py-2 md:w-auto md:text-center">
+                    <button hx-get="/" hx-target="#site" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" data-home @click="active='home'; fullWidth=false" @mouseenter="calculateMarkerPosition($el); hovered='home'" 
+                        :class="{ 'text-white' : active == 'home', 'text-white/80': active != 'home' }"
+                        class="relative inline-flex items-center flex-shrink-0 w-full h-full px-3 py-5 leading-tight text-center transition-colors rounded-full group md:py-2 md:w-auto md:text-center">
                         <span>Home</span>
                         <span 
-                            :class="{ 'w-full left-0' : hovered=='home' || active=='home', 'group-hover:w-full w-0 left-1/2 group-hover:left-0' : hovered!='home' && active!='home' }"    
+                            :class="{ 'w-full left-0' : active=='home', 'w-0 left-1/2' : active!='home' }"    
                             class="absolute bottom-0 px-1.5 translate-y-1.5 h-px duration-300 ease-out"><span class="relative block w-full h-px bg-gradient-to-r md:from-white/0 md:via-white/40 md:to-white/0"></span></span>
-                    </a> 
-                    <a href="/templates" @mouseenter="calculateMarkerPosition($el); hovered='templates'" class="relative inline-flex items-center flex-shrink-0 w-full h-full px-3 py-5 leading-tight text-center text-white rounded-full group md:py-2 md:w-auto md:text-center">
+                    </button> 
+                    <button href="/templates" @mouseenter="calculateMarkerPosition($el); hovered='templates'" 
+                        :class="{ 'text-white' : active == 'templates', 'text-white/80': active != 'templates' }"
+                        class="relative inline-flex items-center flex-shrink-0 w-full h-full px-3 py-5 leading-tight text-center text-white transition-colors rounded-full group md:py-2 md:w-auto md:text-center">
                         <span>Templates</span>
                         <span 
-                            :class="{ 'w-full left-0' : hovered=='templates', 'group-hover:w-full w-0 left-1/2 group-hover:left-0' : hovered!='templates' }"    
+                            :class="{ 'w-full left-0' : active=='templates', 'w-0 left-1/2' : active!='templates' }"    
                             class="absolute bottom-0 px-1.5 translate-y-1.5 h-px duration-300 ease-out"><span class="relative block w-full h-px bg-gradient-to-r md:from-white/0 md:via-white/40 md:to-white/0"></span></span>
-                    </a> 
-                    <a href="/components" @mouseenter="calculateMarkerPosition($el); hovered='tutorials'" class="relative inline-flex items-center flex-shrink-0 w-full h-full px-3 py-5 leading-tight text-center text-white rounded-full group md:py-2 md:w-auto md:text-center">
+                    </button> 
+                    <button href="/components" @mouseenter="calculateMarkerPosition($el); hovered='components'" 
+                        :class="{ 'text-white' : active == 'components', 'text-white/80': active != 'components' }"
+                        class="relative inline-flex items-center flex-shrink-0 w-full h-full px-3 py-5 leading-tight text-center text-white transition-colors rounded-full group md:py-2 md:w-auto md:text-center">
                         <span>Components</span>
                         <span 
-                            :class="{ 'w-full left-0' : hovered=='tutorials', 'group-hover:w-full w-0 left-1/2 group-hover:left-0' : hovered!='tutorials' }"    
+                            :class="{ 'w-full left-0' : active=='components', 'w-0 left-1/2' : active!='components' }"    
                             class="absolute bottom-0 px-1.5 translate-y-1.5 h-px duration-300 ease-out"><span class="relative block w-full h-px bg-gradient-to-r md:from-white/0 md:via-white/40 md:to-white/0"></span></span>
-                    </a> 
-                    <a href="/docs" @mouseenter="calculateMarkerPosition($el); hovered='documentation'" class="relative inline-flex items-center flex-shrink-0 w-full h-full px-3 py-5 leading-tight text-center text-white rounded-full group md:py-2 md:w-auto md:text-center">
+                    </button> 
+                    <button hx-get="/docs" hx-target="#site" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" @click="active='docs'; fullWidth=true" data-docs @mouseenter="calculateMarkerPosition($el); hovered='docs'"
+                        :class="{ 'text-white' : active == 'docs', 'text-white/80': active != 'docs' }"
+                        class="relative inline-flex items-center flex-shrink-0 w-full h-full px-3 py-5 leading-tight text-center text-white transition-colors rounded-full group md:py-2 md:w-auto md:text-center">
                         <span>Documentation</span>
                         <span 
-                            :class="{ 'w-full left-0' : hovered=='documentation', 'group-hover:w-full w-0 left-1/2 group-hover:left-0' : hovered!='documentation' }"    
+                            :class="{ 'w-full left-0' : active=='docs', 'w-0 left-1/2' : active!='docs' }"    
                             class="absolute bottom-0 px-1.5 translate-y-1.5 h-px duration-300 ease-out"><span class="relative block w-full h-px bg-gradient-to-r md:from-white/0 md:via-white/40 md:to-white/0"></span></span>
-                    </a>
+                    </button>
 
                 </div>
                 
             </div>
-            <div class="relative flex items-center px-4 mt-2 space-x-3 font-medium leading-10 md:flex-grow-0 md:flex-shrink-0 md:mt-0 md:text-right lg:flex-grow-0 lg:flex-shrink-0">
+            <div class="relative flex items-center mt-2 space-x-3 font-medium leading-10 md:flex-grow-0 md:flex-shrink-0 md:mt-0 md:text-right lg:flex-grow-0 lg:flex-shrink-0">
                 <a href="https://devdojo.com" target="_blank">
                     <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 170 112" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M115.139 0c15.138 0 29.329 6.537 38.876 17.89 9.977 11.783 13.847 27.092 11.095 43.004-2.15 12.127-8.257 23.824-17.288 32.855-9.031 9.117-20.642 15.223-32.683 17.288-3.01.516-6.02.774-8.945.774h-89.44c-13.623 0-20.306-10.218-14.853-22.707l22.155-50.658a17.51 17.51 0 0 1 16.05-10.493h75.119c6.881 0 13.245 2.838 17.546 7.912 4.558 5.419 6.278 12.558 4.988 20.212-2.322 13.418-13.933 25.2-27.006 27.35-1.462.259-2.925.431-4.387.431l-63.993.055c-3.613.004-6.036-3.709-4.58-7.015l12.315-27.96h15.224l-7.298 16.786c-.861 1.981.59 4.196 2.751 4.196l46.768.005c6.451 0 14.88-7.827 16.428-15.998 1.462-7.74-3.269-11.955-8.687-11.955H40.157a3.425 3.425 0 0 0-3.148 2.064L15.95 92.28c-1.154 2.643.783 5.6 3.666 5.6l86.751-.002c2.236 0 4.473-.258 6.623-.602 18.922-3.182 35.177-19.438 38.532-38.703 2.064-11.784-.774-22.965-7.999-31.565-6.881-8.171-17.202-12.902-28.211-12.902h-32.4a3.445 3.445 0 0 0-3.156 2.073l-2.115 4.894H62.415l4.567-10.484A17.52 17.52 0 0 1 83.006.068L115.14 0Z" class=""></path></svg>
                 </a>
