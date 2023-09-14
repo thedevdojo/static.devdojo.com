@@ -45,7 +45,6 @@ x-init="
     }
 
     $watch('active', function(value){
-        scrollTop();
         setTimeout(function(){
             calculateMarkerPosition(document.querySelector('[data-' + value +']'));
         }, 10);
@@ -106,7 +105,7 @@ x-init="
                     :style="'width:' + markerPosition.width + 'px; height:' + markerPosition.height + 'px; top:' + markerPosition.top + 'px; left:' + markerPosition.left + 'px;'"
                     x-cloak></div>
                 <div id="nav-items" class="relative z-50 flex-col  items-center justify-center w-full h-auto px-2 py-[5px] text-xs font-semibold text-center text-gray-400 rounded-full ring-1 ring-gray-200/[15%] bg-white/[8%] md:w-auto md:h-10 md:flex-row md:items-center">
-                    <button hx-get="/" hx-target="#site" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" data-home @click="active='home'; fullWidth=false" @mouseenter="calculateMarkerPosition($el); hovered='home'" 
+                    <button hx-get="/" hx-target="#site" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" data-home @click="active='home'; fullWidth=false; scrollTop();" @mouseenter="calculateMarkerPosition($el); hovered='home'" 
                         :class="{ 'text-white' : active == 'home', 'text-white/80': active != 'home' }"
                         class="relative inline-flex items-center flex-shrink-0 w-full h-full px-3 py-5 leading-tight text-center transition-colors rounded-full group md:py-2 md:w-auto md:text-center">
                         <span>Home</span>
@@ -130,7 +129,7 @@ x-init="
                             :class="{ 'w-full left-0' : active=='components', 'w-0 left-1/2' : active!='components' }"    
                             class="absolute bottom-0 px-1.5 translate-y-1.5 h-px duration-300 ease-out"><span class="relative block w-full h-px bg-gradient-to-r md:from-white/0 md:via-white/40 md:to-white/0"></span></span>
                     </button> 
-                    <button hx-get="/docs" hx-target="#site" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" @click="active='docs'; fullWidth=true" data-docs @mouseenter="calculateMarkerPosition($el); hovered='docs'"
+                    <button hx-get="/docs/getting-started" hx-target="#site" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" @click="active='docs'; fullWidth=true; scrollTop();" data-docs @mouseenter="calculateMarkerPosition($el); hovered='docs'"
                         :class="{ 'text-white' : active == 'docs', 'text-white/80': active != 'docs' }"
                         class="relative inline-flex items-center flex-shrink-0 w-full h-full px-3 py-5 leading-tight text-center text-white transition-colors rounded-full group md:py-2 md:w-auto md:text-center">
                         <span>Documentation</span>
