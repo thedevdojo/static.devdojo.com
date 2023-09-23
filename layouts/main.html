@@ -50,14 +50,53 @@
           font-display: swap;
       }
 
+
       .pistol-font { 
         font-family: 'pistoleerhalfital';
       }  
     </style>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/powershell.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/shell.min.js"></script>
+
+    <style>
+
+    .prose-sm pre code{
+  font-size:14px;
+}
+
+.docs .prose pre {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:rgba(255, 255, 255, 0.06);
+  border-radius:10px;
+  white-space: break-spaces;
+}
+
+.prose p{
+  color:rgba(255, 255, 255, 0.8);
+}
+
+
+.prose h2{
+  font-size:30px;
+  font-weight:800;
+}
+    </style>
 
     <script>
+      document.addEventListener("DOMContentLoaded", function() {
         hljs.highlightAll();
+      });
+      document.addEventListener('htmx:afterSwap', function(evt) {
+        setTimeout(function(){
+          hljs.highlightAll();
+        }, 10);
+      });
+      // document.body.addEventListener('htmx:afterSwap', function(evt) {
+      //   alert('updated');
+      //   hljs.highlightAll();
+      // });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -96,12 +135,12 @@
 
 </head>
 <body class="bg-black">
-    <div x-data="{ route: '/' }" id="site">
+    <div x-data="{ route: '/' }" x-init="route=window.location.pathname" id="site">
       <include src="header.html"></include>
       <div id="site-content">
         {slot}
       </div>
-    </div>
+    </div>s
     <script src="{ url('/assets/js/main.js') }"></script>
 </body>
 </html>

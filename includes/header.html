@@ -1,5 +1,5 @@
 
-<section x-data="{ 
+<header x-data="{ 
     hovered: '',
     active: 'home',
     lastKnownScrollY: 0,
@@ -29,19 +29,21 @@
         this.markerPosition.height = height;
         this.markerPosition.top = top;
         this.markerPosition.left = left;
-    },
-    scrollTop(){
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-        });
     }
 }" 
+@set-page-active="scrollTop(); active = $event.detail.active;"
+@set-page-full-width="fullWidth=true"
+id="header"
 x-init="
 
     if(window.location.pathname.includes('docs')){
         fullWidth = true;
+        active='docs';
+    }
+
+    if(window.location.pathname.includes('templates')){
+        fullWidth = true;
+        active='templates';
     }
 
     $watch('active', function(value){
@@ -105,7 +107,7 @@ x-init="
                     :style="'width:' + markerPosition.width + 'px; height:' + markerPosition.height + 'px; top:' + markerPosition.top + 'px; left:' + markerPosition.left + 'px;'"
                     x-cloak></div>
                 <div id="nav-items" class="relative z-50 flex-col  items-center justify-center w-full h-auto px-2 py-[5px] text-xs font-semibold text-center text-gray-400 rounded-full ring-1 ring-gray-200/[15%] bg-white/[8%] md:w-auto md:h-10 md:flex-row md:items-center">
-                    <button hx-get="/" hx-target="#site" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" data-home @click="active='home'; fullWidth=false; scrollTop();" @mouseenter="calculateMarkerPosition($el); hovered='home'" 
+                    <button hx-get="/" hx-target="#site-content" hx-select="#site-content" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" data-home @click="active='home'; fullWidth=false; scrollTop();" @mouseenter="calculateMarkerPosition($el); hovered='home'" 
                         :class="{ 'text-white' : active == 'home', 'text-white/80': active != 'home' }"
                         class="relative inline-flex items-center flex-shrink-0 w-full h-full px-3 py-5 leading-tight text-center transition-colors rounded-full group md:py-2 md:w-auto md:text-center">
                         <span>Home</span>
@@ -113,7 +115,7 @@ x-init="
                             :class="{ 'w-full left-0' : active=='home', 'w-0 left-1/2' : active!='home' }"    
                             class="absolute bottom-0 px-1.5 translate-y-1.5 h-px duration-300 ease-out"><span class="relative block w-full h-px bg-gradient-to-r md:from-white/0 md:via-white/40 md:to-white/0"></span></span>
                     </button> 
-                    <button href="/templates" @mouseenter="calculateMarkerPosition($el); hovered='templates'" 
+                    <button hx-get="/templates" hx-target="#site-content" hx-select="#site-content" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" @click="active='templates'; fullWidth=true; scrollTop(); route=$el.getAttribute('hx-get')" data-templates @mouseenter="calculateMarkerPosition($el); hovered='templates'" 
                         :class="{ 'text-white' : active == 'templates', 'text-white/80': active != 'templates' }"
                         class="relative inline-flex items-center flex-shrink-0 w-full h-full px-3 py-5 leading-tight text-center text-white transition-colors rounded-full group md:py-2 md:w-auto md:text-center">
                         <span>Templates</span>
@@ -123,13 +125,13 @@ x-init="
                     </button> 
                     <button href="/components" @mouseenter="calculateMarkerPosition($el); hovered='components'" 
                         :class="{ 'text-white' : active == 'components', 'text-white/80': active != 'components' }"
-                        class="relative inline-flex items-center flex-shrink-0 w-full h-full px-3 py-5 leading-tight text-center text-white transition-colors rounded-full group md:py-2 md:w-auto md:text-center">
+                        class="relative inline-flex items-center flex-shrink-0 hidden w-full h-full px-3 py-5 leading-tight text-center text-white transition-colors rounded-full group md:py-2 md:w-auto md:text-center">
                         <span>Components</span>
                         <span 
                             :class="{ 'w-full left-0' : active=='components', 'w-0 left-1/2' : active!='components' }"    
                             class="absolute bottom-0 px-1.5 translate-y-1.5 h-px duration-300 ease-out"><span class="relative block w-full h-px bg-gradient-to-r md:from-white/0 md:via-white/40 md:to-white/0"></span></span>
                     </button> 
-                    <button hx-get="/docs/getting-started" hx-target="#site" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" @click="active='docs'; fullWidth=true; scrollTop();" data-docs @mouseenter="calculateMarkerPosition($el); hovered='docs'"
+                    <button hx-get="/docs/getting-started" hx-target="#site-content" hx-select="#site-content" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" @click="active='docs'; fullWidth=true; scrollTop(); route=$el.getAttribute('hx-get')" data-docs @mouseenter="calculateMarkerPosition($el); hovered='docs'"
                         :class="{ 'text-white' : active == 'docs', 'text-white/80': active != 'docs' }"
                         class="relative inline-flex items-center flex-shrink-0 w-full h-full px-3 py-5 leading-tight text-center text-white transition-colors rounded-full group md:py-2 md:w-auto md:text-center">
                         <span>Documentation</span>
@@ -137,6 +139,17 @@ x-init="
                             :class="{ 'w-full left-0' : active=='docs', 'w-0 left-1/2' : active!='docs' }"    
                             class="absolute bottom-0 px-1.5 translate-y-1.5 h-px duration-300 ease-out"><span class="relative block w-full h-px bg-gradient-to-r md:from-white/0 md:via-white/40 md:to-white/0"></span></span>
                     </button>
+                    <a href="https://devdojo.com" target="_blank"
+                        class="relative inline-flex items-center flex-shrink-0 w-full h-full px-3 py-5 leading-tight text-center transition-colors rounded-full text-white/80 hover:text-white group md:py-2 md:w-auto md:text-center">
+                        <span class="flex items-center space-x-1">
+                            <span>DevDojo</span>
+                            <svg class="w-4 h-4 duration-300 ease-out -translate-x-px translate-y-0 group-hover:-translate-y-px group-hover:translate-x-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                                <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
+                              </svg>
+                              
+                              
+                        </span>
+                    </a>
 
                 </div>
                 
@@ -152,4 +165,4 @@ x-init="
             </div>
         </div>
     </div>
-</section>
+</header>

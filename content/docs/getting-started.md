@@ -1,78 +1,135 @@
 ---
-title: Example Guide
-description: A guide in my new Starlight docs site.
-layout: post.html
+title: Getting Started with Static
+description: This is the introduction and getting started seciton of the Static documentation.
+slug: 'getting-started'
+nextTitle: 'Installation'
+nextURL: '/docs/install'
+prevTitle: null
+prevURL: null
+home: true
 ---
-
-![Static Banner](/assets/images/banner.jpg)
 
 ## Getting Started
 
-Welcome to **Static**, the static site generator that brings joy back into building simple and stylish websites. 
-
-Remember the days of <a href="https://thehistoryoftheweb.com/an-ode-to-geocities/" target="_blank" class="text-yellow-400">GeoCities</a> and retro-styled websites? Creation of these websites were fun and simple, and we're here to help you rediscover that joy and simplicity. Here's the spiel:
+**Static** is a static site generator you're going to love. Here's the spiel:
 
 - Static is **easy**. 
 - HTML is **easy**. 
-- Yet, somehow we lost the art of **crafting simple** Static HTML websites
+- Yet, somehow we lost the art of **crafting simple** HTML websites
 
-No longer will this stand! **Static** is here to reclaim the throne of simplicity!
+Static is going to help you rediscover the joy and excitement of building HTML websites.
 
 ## Why Static
 
-Here at the <a href="https://thehistoryoftheweb.com/an-ode-to-geocities/" target="_blank" class="text-yellow-400">DevDojo</a>, we've crafted websites of all sorts, from single page sites to full-blown monolith apps. Each time we set out to create a static site, all the solutions seemed overkill for most use-cases.
+Most <strong>Static Site Generators</strong> (SSG's) **are overkill** and packed with unnecessary complexities. This might push people to their breaking point, giving them a strong desire to set fire to the office 🔥
 
-![NPM Package Comic](/assets/images/npm-comic.jpg)
+<div class="flex items-center px-4 py-4 my-6 leading-[18px] bg-blue-600 border-l-4 border-blue-800 rounded-md">
+<img class="w-auto h-8 mr-3.5 my-0" src="/assets/images/icons/info.png" />
+<span>This is where Static comes into play. Static is here to make things simple, bring you joy, and help you regain control over any desire to start fires.</span>
+</div>
 
-On a regular basis, we would run into NPM conflicts or wrestle configs from our current SSG (static site generator). SSG's had become a pain in the ass to deal with. We turned something simple into something needlessly complicated. We might have been better off creating static folders and index.html files.
 
-This got us thinking about the main reason we reach for a static site generator in the first place. It's because we want to take advantage of shared layouts and reusable code. What if we created something that was centered around re-useable code (includes) and HTML structures (layouts). It's Simple, It's Static... It's just so Stupid easy that it just might work!
+Generating static websites can be simple and enjoyable again without the need for bloated frameworks and complicated configs. Check out a few of the key features below.
 
-Static was born 👶
+## Key Features
 
-> Static is not your traditional SSG. Oh no! It's so much more. It's a Stupidly Super Simple Static Site Generator. It's an SSSSSG!
+Here are a few key features that will help you get aquainted with Static.
 
-problem is that we can't create re-usable headers, footers, and other snippets. 
-Have you ever felt overwhelmed by the complicated configurations and bloated frameworks of modern static site generators? Do you long for the days when building a website meant crafting simple HTML pages? Well, you're in luck! Static is here to reclaim the throne of simplicity.
-Embracing the Basics
+### Page-Based Routing
 
-At its core, Static is all about embracing the basics. It's a static site generator that focuses on what truly matters: HTML files. No more convoluted setups or unnecessary complexities. With Static, you can get started with just a few simple steps.
-Features at a Glance
+Static uses a simple page-based routing system where each route is mapped to a file inside of the pages directory. With a structure like this:
 
-Static offers a range of features that make building static websites a breeze. Let's take a quick look at what you can expect:
+<div class="p-5 font-mono whitespace-break-spaces bg-white/[6%] rounded-xl border border-white/[8%]"><span class="text-green-400">📁 pages</span>
+<span class="text-green-400"><span class="text-yellow-400">├──</span> 📄 index.html</span>
+<span class="text-green-400"><span class="text-yellow-400">├──</span> 📄 about.html</span>
+<span class="text-green-400"><span class="text-yellow-400">├──</span> 📁 contact</span>
+<span class="text-green-400"><span class="text-yellow-400">│   ├──</span> 📄 index.html</span>
+<span class="text-green-400"><span class="text-yellow-400">│   ├──</span> 📁 form</span>
+<span class="text-green-400"><span class="text-yellow-400">│   │   ├──</span> 📄 index.html</span>
+</div>
 
-1. Page-based Routing: Easily create and organize your website's pages using intuitive routing mechanisms.
+Your new site will have the following routes available:
 
-2. Layouts: Define reusable layouts to maintain consistency across your site and save time.
+<div class="p-5 font-mono whitespace-break-spaces bg-white/[6%] rounded-xl border text-gray-400 border-white/[8%]">http://localhost:3000<span class="text-green-400">/</span>
+http://localhost:3000<span class="text-green-400">/about</span>
+http://localhost:3000<span class="text-green-400">/contact</span>
+http://localhost:3000<span class="text-green-400">/contact/form</span>
+</div>
 
-3. Includes: Seamlessly include common elements, such as headers and footers, across multiple pages.
+<div class="flex justify-end my-8 ">
+    <a href="/docs/features/pages" class="relative inline-block w-full px-4 py-2 text-xs font-medium text-center text-white no-underline bg-transparent rounded-full opacity-70 group-hover:opacity-100 group ring-1 ring-white/20 md:w-auto">
+        <span>Learn more about pages</span>
+        <span class="text-[#e66735] group-hover:translate-x-1 inline-block ml-0.5 ease-out duration-300">&rarr;</span>
+    </a>
+</div>
 
-4. TailwindCSS Integration: Harness the power of TailwindCSS to effortlessly style your static website.
+### 2. Layouts
 
-5. Collections: Organize your content into collections for easy management and navigation.
-Getting Started
+Design **layouts** that multiple pages can utilize.
 
-Getting started with Static is as simple as it gets. Just follow these steps:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+</head>
+<body>
+    {slot}
+</body>
+</html>
+```
 
-1. Install Static by running npm install -g static.
+Then, use it in any page.
 
-2. Create a new folder for your project and navigate into it.
+```
+<layout title="Radical Righteousness" src="main.html">
 
-3. Run static new to initialize a new Static project.
+    <h1>🏄‍♂️ Totally Tubuloso Website</h1>
+    
+</layout>
+```
 
-4. Start building your website by adding HTML files to the pages folder.
+<div class="flex justify-end my-8 ">
+    <a href="/docs/features/layouts" class="relative inline-block w-full px-4 py-2 text-xs font-medium text-center text-white no-underline bg-transparent rounded-full opacity-70 group-hover:opacity-100 group ring-1 ring-white/20 md:w-auto">
+        <span>Learn more about layouts</span>
+        <span class="text-[#e66735] group-hover:translate-x-1 inline-block ml-0.5 ease-out duration-300">&rarr;</span>
+    </a>
+</div>
 
-5. Customize your layouts and include common elements to enhance the consistency of your site.
+### Includes
 
-6. Style your website using TailwindCSS to make it visually stunning.
+Create re-usable HTML partials with the `<include>` tag. Specify the HTML file with the `src` attribute.
 
-7. Build your static website by running static build.
+```
+<layout title="Behind the Scenes!" src="main.html">
 
-8. Deploy your website to your preferred hosting provider and share it with the world!
-Join the Simplicity Revolution
+    <include src="about-header.html"></include>
+    <include src="about-copy.html"></include>
 
-Say goodbye to complexity and embrace the power of simplicity with Static. It's time to rediscover the joy of building static websites the easy way. Get started with Static today and experience the pure power of simplicity.
+</layout>
+```
 
-For more information and detailed documentation, visit the Static GitHub repository.
+<div class="flex justify-end my-8 ">
+    <a href="/docs/features/pages" class="relative inline-block w-full px-4 py-2 text-xs font-medium text-center text-white no-underline bg-transparent rounded-full opacity-70 group-hover:opacity-100 group ring-1 ring-white/20 md:w-auto">
+        <span>Learn more about includes</span>
+        <span class="text-[#e66735] group-hover:translate-x-1 inline-block ml-0.5 ease-out duration-300">&rarr;</span>
+    </a>
+</div>
 
-Happy coding!
+## Start your first site
+
+Getting started with Static is super easy. The first thing that you'll want to do is install the **Static CLI** command globally. Make sure you have the pre-requisites installed, and then inside of your command line you can run:
+
+<div class="p-5 font-mono whitespace-break-spaces bg-white/[6%] rounded-xl border border-white/[8%]"><span class="text-pink-400">npm install</span> <span class="text-green-400">-g</span> <span class="text-yellow-400">@devdojo/static</span>
+</div>
+
+Now that you have the **Static CLI** command installed you can create a new static website by running:
+
+<div class="p-5 font-mono whitespace-break-spaces bg-white/[6%] rounded-xl border border-white/[8%]"><span class="text-pink-400">static</span> <span class="text-green-400">new</span> <span class="text-yellow-400">folder-name</span>
+</div>
+
+You can run this command from any directory and it will create a new website inside of the `folder-name` that you specified.
+
+Boom 💥 That's it you're now ready to start building your next masterpeice.

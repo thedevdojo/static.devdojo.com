@@ -96,6 +96,18 @@ document.addEventListener("DOMContentLoaded", function() {
         scrub: true
     });
 
+    gsap.to("#how-to-use-it", {
+        scrollTrigger: {
+            trigger: "#features",
+            start: "bottom 90%",
+            end: "bottom 20%",
+            scrub: true
+        },
+        y: -150,
+        opacity: 1,
+        scrub: true
+    });
+
     // gsap.to("#yay", {
     //     scrollTrigger: {
     //         trigger: "#features-content",
@@ -108,3 +120,11 @@ document.addEventListener("DOMContentLoaded", function() {
     // });
 
 });
+
+window.scrollTop = function(){
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    });
+}

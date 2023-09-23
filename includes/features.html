@@ -10,7 +10,7 @@
 
             <div id="features-header" class="flex flex-col items-center justify-center text-center">
                 <h2 class="font-book font-styling font-display mb-3 text-center md:text-left text-[28rem] md:text-[3.5rem] pistol-font  tracking-tight leading-[120%] font-gradient">This is Where the Real Fun Begins</h2>
-                <p class="sans mb-12 text-center md:text-center max-w-3xl mx-auto opacity-60 text-base md:text-[1.125rem] md:leading-[1.5] text-slate-11 font-normal">Here are a handful of radical features that will help you enjoy building static websites.</p>
+                <p class="sans mb-12 text-center md:text-center max-w-3xl mx-auto opacity-60 text-base md:text-[1.125rem] md:leading-[1.5] text-slate-11 font-normal">Here are a handful of features that will help you enjoy building static websites again.</p>
             </div>
 
             <div class="relative flex flex-col-reverse items-start p-px group rounded-2xl md:flex-row" style="background-image:linear-gradient(160deg,#e66735,#e335e2 50%,#73f7f8, #a729ed)">
@@ -58,7 +58,7 @@
 
         </div>
 
-        <div class="relative flex items-stretch max-w-4xl mx-auto mt-10 space-x-10">
+        <section class="relative flex items-stretch max-w-4xl mx-auto mt-10 space-x-10">
 
             <div class="relative flex flex-col-reverse items-start w-1/2 p-px h-100 group rounded-2xl md:flex-row" style="background-image:linear-gradient(160deg,#e66735,#e335e2 50%,#73f7f8, #a729ed)">
                 <div class="absolute inset-0 w-full h-full duration-300 ease-out bg-black opacity-100 pointer-events-none group-hover:opacity-0 rounded-2xl"></div>
@@ -112,7 +112,7 @@
                             <pre class="text-sm whitespace-pre group"><code class="bg-black border-t border-b opacity-80 group-hover:opacity-100 border-gray-200/20 features-layouts group-hover:bg-white/5 language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
-    &lt;title&gt;Site Title&lt;/title&gt;
+    &lt;title&gt;&#123;title&#125;&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
     {slot}
@@ -130,7 +130,7 @@
 </div>
 
 <div class="relative w-full">
-    <pre class="text-sm whitespace-pre group"><code class="bg-black border-t border-b opacity-80 group-hover:opacity-100 border-gray-200/20 features-layouts group-hover:bg-white/5 language-html">&lt;layout src=&quot;main.html&quot;&gt;
+    <pre class="text-sm whitespace-pre group"><code class="bg-black border-t border-b opacity-80 group-hover:opacity-100 border-gray-200/20 features-layouts group-hover:bg-white/5 language-html">&lt;layout title=&quot;Title&quot; src=&quot;main.html&quot;&gt;
 
     &lt;h1&gt;Layouts Rock &#x1F918;&lt;/h1&gt;
     
@@ -153,7 +153,7 @@
             </div>
 
 
-        </div>
+        </section>
         
         <div class="max-w-4xl mx-auto mt-10">
             <div class="relative flex flex-col-reverse items-start p-px group rounded-2xl md:flex-row" style="background-image:linear-gradient(160deg,#e66735,#e335e2 50%,#73f7f8, #a729ed)">
@@ -207,11 +207,83 @@
             </div>
         </div>
 
+        <section class="relative flex items-stretch max-w-4xl mx-auto mt-10 space-x-10">
+
+            <div class="relative flex flex-col-reverse items-start w-1/2 p-px h-100 group rounded-2xl md:flex-row" style="background-image:linear-gradient(160deg,#e66735,#e335e2 50%,#73f7f8, #a729ed)">
+                <div class="absolute inset-0 w-full h-full duration-300 ease-out bg-black opacity-100 pointer-events-none group-hover:opacity-0 rounded-2xl"></div>
+                <div class="w-full h-full bg-black rounded-2xl">
+                    <div class="relative flex flex-col items-start w-full h-full overflow-hidden ring-1 ring-white/[15%] radial-background bg-gradient-to-br from-neutral-950 to-black rounded-2xl">
+                        <div class="flex-auto p-12">
+                            <p class="relative inline-block mb-2 text-xl font-semibold tracking-tight text-transparent opacity-90 group-hover:opacity-100">
+                                <span class="relative z-20 bg-clip-text bg-gradient-to-r from-neutral-400 via-neutral-100 to-neutral-500 group-hover:from-neutral-200 group-hover:via-neutral-100 group-hover:to-neutral-200">Create Content</span>
+                            </p>
+                            <div class="mb-6 space-y-4 text-sm leading-6 text-white/80 opacity-70 group-hover:opacity-100">
+                                <p>Add a Markdown file to the content folder and it will automatically create a page.</p>
+                            </div>
+                            <a href="#_" class="relative inline-block w-full px-4 py-2 text-xs font-medium text-center text-white bg-transparent rounded-full opacity-70 group-hover:opacity-100 group ring-1 ring-white/20 md:w-auto">
+                                <span>Learn more</span>
+                                <span class="text-[#e66735] group-hover:translate-x-1 inline-block ml-0.5 ease-out duration-300">&rarr;</span>
+                            </a>
+                        </div>
+                        <div class="relative pl-12">
+                            <div class="ring-1 ring-white/[15%] rounded-tl-lg opacity-80 group-hover:opacity-100">
+                                <div class="flex items-center w-full h-10 pl-4 duration-300 ease-out bg-transparent border-b rounded-tl-lg group hover:bg-white/5 border-white/20 opacity-80">
+                                    <div class="flex space-x-1.5 group-hover:opacity-100 ease-out duration-300">
+                                        <div class="w-2.5 h-2.5 bg-red-400 rounded-full"></div>
+                                        <div class="w-2.5 h-2.5 bg-yellow-400 rounded-full"></div>
+                                        <div class="w-2.5 h-2.5 bg-green-400 rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class=" hover:bg-white/5">
+                                    <img src="/assets/images/content.jpg" class="w-full pointer-events-none" />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative flex flex-col-reverse w-1/2 p-px h-100 group rounded-2xl md:flex-row" style="background-image:linear-gradient(160deg,#e66735,#e335e2 50%,#73f7f8, #a729ed)">
+                <div class="absolute inset-0 w-full h-full duration-300 ease-out bg-black opacity-100 pointer-events-none group-hover:opacity-0 rounded-2xl"></div>
+                <div class="w-full h-full bg-black rounded-2xl">
+                    <div class="relative flex flex-col items-start w-full h-full overflow-hidden ring-1 ring-white/[15%] radial-background bg-gradient-to-br from-neutral-950 to-black rounded-2xl">
+                        <div class="w-full p-12 pb-8">
+                            <p class="relative inline-block mb-2 text-xl font-semibold tracking-tight text-transparent opacity-90 group-hover:opacity-100">
+                                <span class="relative z-20 bg-clip-text bg-gradient-to-r from-neutral-400 via-neutral-100 to-neutral-500 group-hover:from-neutral-200 group-hover:via-neutral-100 group-hover:to-neutral-200">Live Reloading</span>
+                            </p>
+                            <div class="space-y-4 text-sm leading-6 text-white/80 opacity-70 group-hover:opacity-100">
+                                <p>Update your code and see the result instantly with live-reloading.</p>
+                            </div>
+                        </div>
+                        <div class="w-full p-12 pt-0 pb-5">
+    
+                        
+                            <a href="#_" class="relative inline-block w-full px-4 py-2 text-xs font-medium text-center text-white bg-transparent rounded-full opacity-70 group-hover:opacity-100 group ring-1 ring-white/20 md:w-auto">
+                                <span>Learn more</span>
+                                <span class="text-[#e66735] group-hover:translate-x-1 inline-block ml-0.5 ease-out duration-300">&rarr;</span>
+                            </a>
+                            
+                        </div>
+
+                        <div class="relative flex items-end w-full h-full pl-8">
+                            <div class="relative ">
+                                <img src="/assets/images/live-reload.png" class="w-full pointer-events-none" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+
         <div class="flex items-center justify-center max-w-4xl py-20 mx-auto">
-            <a href="#_" class="relative inline-block w-full px-4 py-2 text-xs font-medium text-center text-white bg-transparent rounded-full opacity-70 group-hover:opacity-100 group ring-1 ring-white/20 md:w-auto">
+            <button hx-get="/docs/getting-started" hx-target="#site-content" hx-select="#site-content" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" @click="document.getElementById('header').dispatchEvent(new CustomEvent('set-page-active', { detail: { active: 'docs' }})); document.getElementById('header').dispatchEvent(new CustomEvent('set-page-full-width', { detail: {}})); route=$el.getAttribute('hx-get')" data-docs class="relative inline-block w-full px-4 py-2 text-xs font-medium text-center text-white bg-transparent rounded-full opacity-70 group-hover:opacity-100 group ring-1 ring-white/20 md:w-auto">
                 <span>View the docs to view all features</span>
                 <span class="text-[#e66735] group-hover:translate-x-1 inline-block ml-0.5 ease-out duration-300">&rarr;</span>
-            </a>
+            </button>
         </div>
 
     </div>
