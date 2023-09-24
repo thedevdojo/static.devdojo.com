@@ -30,7 +30,24 @@ The content for your website will live inside a `content` folder, located in the
 
 To create a new piece of content you add a new file with a `.md` extension to the `content` folder.
 
-Any file in this directory will be mapped to a route, similar to page-based routing. As an example, say we have a file located at `content/docs/index.md`, this will create a new route at `https://localhost:3000/docs`.
+Any file in this directory will be mapped to a route, similar to page-based routing. Here's an example:
+
+<div class="py-3.5 px-5 font-mono text-xs text-neutral-400 font-bold border rounded-md bg-neutral-950 border-neutral-800">📄 content/docs/index.md</div>
+
+```makefile
+---
+title: Welcome to the Docs
+description: Add a description here
+---
+
+Welcome to the docs. This is an example markdown file.
+
+## About
+
+Learn more about...
+```
+
+If this file above were located at `content/docs/index.md`, it would create a new route at `https://localhost:3000/docs`.
 
 ## Content Pages
 
@@ -68,7 +85,7 @@ The same HTML can be used for multiple pieces of content. If we had a page at `p
 
 At the beginning of every Markdown file you will add **frontmatter** to the top of the file, which displays information about that specific content. Here's an example:
 
-```yaml
+```makefile
 ---
 title: My Awesome Content
 date: 2022-01-01
