@@ -3,8 +3,8 @@ title: Live Reloading
 description: Save time with Statics Live-reloading feature
 nextTitle: 'TailwindCSS Integration'
 nextURL: '/docs/features/tailwindcss'
-prevTitle: 'Collections'
-prevURL: '/docs/features/collections' 
+prevTitle: 'Content'
+prevURL: '/docs/features/content' 
 ---
 
 

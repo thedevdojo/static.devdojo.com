@@ -48,7 +48,7 @@ You can add as many collections to your website and reference that data on your 
 
 ## Collection Loops
 
-To loop through a collection we can use the `<ForEach></ForEach>` tags. To reference a specific collection you'll add the collection filename to the `collection` attribute, like so:
+To loop through a collection we can use the `<ForEach></ForEach>` tags. To reference a collection, you pass the filename inside the `collection` attribute, like so:
 
 ```html
 <ForEach collection="menu">...</ForEach>
