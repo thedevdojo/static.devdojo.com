@@ -1,5 +1,21 @@
 [
     {
+        "name" : "Aria",
+        "cover" : "https://raw.githubusercontent.com/static-templates/aria/main/assets/images/cover.jpg",
+        "favicon": "https://raw.githubusercontent.com/static-templates/aria/main/assets/images/favicon.png",
+        "description": "A template for a personal website, portfolio, or blog.",
+        "slug" : "aria",
+        "url" : "https://aria.devdojo.io"
+    },
+    {
+        "name" : "Blog",
+        "cover" : "https://raw.githubusercontent.com/static-templates/blog/main/assets/images/cover.jpg",
+        "favicon": "https://raw.githubusercontent.com/static-templates/blog/main/assets/images/favicon.png",
+        "description": "A simple and clean blog template for your static website.",
+        "slug" : "blog",
+        "url" : "https://blog.devdojo.io"
+    },
+    {
         "name" : "Static Starter",
         "cover" : "https://raw.githubusercontent.com/static-templates/starter/main/assets/images/cover.jpg",
         "favicon": "https://raw.githubusercontent.com/static-templates/starter/main/assets/images/favicon.png",
@@ -14,13 +30,5 @@
         "description": "A Free Static theme designed for Business, Marketing, SaaS and Startup websites.",
         "slug" : "stone",
         "url" : "https://stone.devdojo.io"
-    },
-    {
-        "name" : "Blog",
-        "cover" : "https://raw.githubusercontent.com/static-templates/blog/main/assets/images/cover.jpg",
-        "favicon": "https://raw.githubusercontent.com/static-templates/blog/main/assets/images/favicon.png",
-        "description": "A simple and clean blog template for your static website.",
-        "slug" : "blog",
-        "url" : "https://blog.devdojo.io"
     }
 ]
