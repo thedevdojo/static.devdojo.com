@@ -102,15 +102,17 @@ window.scrollTop = function(){
 
 function domReadyLoop(){
     if(document.getElementById('loader')){
+        let intervalCount = 0;
+        let maxIntervalCount = 10; // -> 10*500ms = 5s max
         let domReadyInterval = setInterval(function(){
-            if(document.readyState === 'complete'){
+            if(document.readyState === 'complete' || intervalCount++ > maxIntervalCount){
                 clearInterval(domReadyInterval);
                 document.getElementById('loader').classList.add('opacity-0');
                 setTimeout(function(){
                     document.getElementById('loader').remove();
                 }, 300);
             }       
-        }, 1000);
+        }, 500);
     }
 }
 
