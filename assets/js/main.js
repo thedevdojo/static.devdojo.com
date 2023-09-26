@@ -7,7 +7,7 @@ window.Alpine = Alpine
 Alpine.plugin(morph)
 
 Alpine.start()
-
+domReadyLoop();
 
 document.addEventListener("DOMContentLoaded", function() {
     let radialElements = document.querySelectorAll('.radial-background');
@@ -29,24 +29,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     
 });
-
-// document.addEventListener('alpine:init', () => {
-//     Alpine.data('gradientHover', () => ({
-//         angle: 45, 
-//         rotatingInterval: null, 
-//         rotateBackground(){ 
-//             let that=this; 
-//             this.rotatingInterval = setInterval(function(){ 
-//                 that.angle +=1; 
-//             }, 10); 
-//         },
-//         init(){
-//             this.$el.addEventListener("mouseenter", (event) => {
-//                 console.log('rad');
-//             });
-//         }
-//     }))
-// })
 
 document.addEventListener("DOMContentLoaded", function() {
     gsap.to("#hero", {
@@ -108,17 +90,6 @@ document.addEventListener("DOMContentLoaded", function() {
         scrub: true
     });
 
-    // gsap.to("#yay", {
-    //     scrollTrigger: {
-    //         trigger: "#features-content",
-    //         start: "top 70%",
-    //         scrub: true
-    //     },
-    //     y: 0,
-    //     opacity: 1,
-    //     scrub: true
-    // });
-
 });
 
 window.scrollTop = function(){
@@ -128,3 +99,32 @@ window.scrollTop = function(){
         behavior: 'smooth'
     });
 }
+
+function domReadyLoop(){
+    if(document.getElementById('loader')){
+        let domReadyInterval = setInterval(function(){
+            if(document.readyState === 'complete'){
+                clearInterval(domReadyInterval);
+                document.getElementById('loader').classList.add('opacity-0');
+                setTimeout(function(){
+                    document.getElementById('loader').remove();
+                }, 300);
+            }       
+        }, 1000);
+    }
+}
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    hljs.highlightAll();
+  });
+  document.addEventListener('htmx:afterSwap', function(evt) {
+    setTimeout(function(){
+        domReadyLoop();
+      hljs.highlightAll();
+    }, 10);
+  });
+  // document.body.addEventListener('htmx:afterSwap', function(evt) {
+  //   alert('updated');
+  //   hljs.highlightAll();
+  // });
