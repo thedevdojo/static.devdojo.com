@@ -93,7 +93,7 @@ x-init="
         <div class="relative w-full h-px bg-white opacity-20"></div>
     </div>
     <div id="nav-border-animated" class="absolute bg-yellow-300 h-0.5 bottom-0 left-0 w-0"></div>
-    <div id="nav-container" :class="{ 'max-w-6xl': !fullWidth, 'max-w-7xl' : fullWidth }" class="w-full px-6 mx-auto leading-10 text-center duration-300 ease-out md:px-8" x-cloak>
+    <div id="nav-container" :class="{ 'max-w-6xl': !fullWidth, 'max-w-7xl' : fullWidth }" class="w-full max-w-6xl px-6 mx-auto leading-10 text-center duration-300 ease-out md:px-8">
         <div class="box-border flex flex-wrap items-center justify-between -mx-4 text-indigo-900">
             <div class="relative flex items-center w-auto leading-10 lg:flex-grow-0 lg:flex-shrink-0 lg:text-left">
                <include src="logo.html"></include>
@@ -105,7 +105,7 @@ x-init="
                 <div class="absolute bottom-0 left-0 w-full h-px translate-y-px opacity-60 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
                 <div id="marker" class="absolute top-0 z-20 left-0 w-auto h-auto rounded-full bg-white/[7%] backdrop-blur-lg ease-out duration-300" 
                     :style="'width:' + markerPosition.width + 'px; height:' + markerPosition.height + 'px; top:' + markerPosition.top + 'px; left:' + markerPosition.left + 'px;'"
-                    x-cloak></div>
+                    ></div>
                 <div id="nav-items" class="relative z-50 flex-col  items-center justify-center w-full h-auto px-2 py-[5px] text-xs font-semibold text-center text-gray-400 rounded-full ring-1 ring-gray-200/[15%] bg-white/[8%] md:w-auto md:h-10 md:flex-row md:items-center">
                     <button hx-get="/" hx-target="#site-content" hx-select="#site-content" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" data-home @click="active='home'; fullWidth=false; scrollTop();" @mouseenter="calculateMarkerPosition($el); hovered='home'" 
                         :class="{ 'text-white' : active == 'home', 'text-white/80': active != 'home' }"

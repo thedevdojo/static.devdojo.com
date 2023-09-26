@@ -89,21 +89,6 @@
         color: #87e778;
       }
     </style>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        hljs.highlightAll();
-      });
-      document.addEventListener('htmx:afterSwap', function(evt) {
-        setTimeout(function(){
-          hljs.highlightAll();
-        }, 10);
-      });
-      // document.body.addEventListener('htmx:afterSwap', function(evt) {
-      //   alert('updated');
-      //   hljs.highlightAll();
-      // });
-    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/htmx.org@1.9.5"></script>
@@ -141,6 +126,10 @@
 
 </head>
 <body class="bg-black">
+    <div id="loader" class="fixed inset-0 z-50 flex items-center justify-center w-screen h-screen duration-300 ease-out bg-black">
+      <img src="/assets/images/lightning.gif" class="w-32 h-auto">
+    </div>
+
     <div x-data="{ route: '/' }" x-init="route=window.location.pathname" id="site">
       <include src="header.html"></include>
       <div id="site-content">
