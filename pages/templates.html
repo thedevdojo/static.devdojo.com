@@ -1,6 +1,16 @@
 <layout title="Static Starter Template" src="main.html">
 
-    <div class="max-w-6xl pt-12 mx-auto">
+    <div x-data="{
+        templates: [],
+        activeTemplate: null,
+        setActiveTemplate: function(template_slug){
+            for(let i =0; i<this.templates.length; i++){
+                if(this.templates[i].slug == template_slug){
+                    this.activeTemplate = this.templates[i];
+                }
+            }
+        }
+    }" class="max-w-6xl pt-12 mx-auto">
 
         <div class="flex flex-col gap-4 py-16 text-center text-white sm:gap-6 sm:py-20">
             <h1 class="text-4xl font-medium tracking-tight sm:text-5xl lg:text-6xl pistol-font">Templates</h1>
@@ -12,7 +22,9 @@
         <div class="grid items-center justify-center w-full h-auto grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10">
 
             <ForEach collection="templates" as="template">
-                <div x-data @click="window.dispatchEvent(new CustomEvent('show-template-preview', { detail : { url: '{template.url}' }}));" class="flex w-full overflow-hidden transition-all duration-75 ease-out border rounded-md cursor-pointer border-neutral-700 sm:rounded-xl sm:shadow-lg group opacity-95 hover:opacity-100">
+                <div x-data @click="window.dispatchEvent(new CustomEvent('show-template-preview', { detail : { url: '{template.url}' }})); setActiveTemplate('{template.slug}')"
+                    x-init="templates.push({ name: '{template.name}', cover: '{template.cover}', favicon: '{template.favicon}', description: '{template.description}', slug: '{template.slug}', url: '{template.url}' })" 
+                    class="flex w-full overflow-hidden transition-all duration-75 ease-out border rounded-md cursor-pointer border-neutral-700 sm:rounded-xl sm:shadow-lg group opacity-95 hover:opacity-100">
                     <div class="flex flex-col">
                         <div class="relative overflow-hidden">
                             <div class="h-6 w-6 z-20 flex-shrink-0 absolute top-0 left-0 ml-2.5 mt-2.5 group-hover:-rotate-12 ease-out duration-300">
@@ -56,8 +68,9 @@
                 </div>
             </ForEach>
         </div>
-    </div>
 
-    <include src="template-previews.html"></include>
+        <include src="template-previews.html"></include>
+
+    </div>
 
 </layout>
