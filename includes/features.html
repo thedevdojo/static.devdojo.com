@@ -6,8 +6,8 @@
             
 
             <div id="features-header" class="flex flex-col items-center justify-center text-center">
-                <h2 class="font-book font-styling w-full font-display md:mb-3 leading-none text-left md:text-center text-[2.3rem] sm:text-[2.4rem] md:text-[2.7rem] lg:text-[3.5rem] pistol-font  tracking-tight md:leading-[120%] font-gradient">This is Where the Real Fun Begins</h2>
-                <p class="sans mb-12 text-left w-full md:text-center max-w-3xl mx-auto opacity-60 text-sm sm:text-base md:text-[1.125rem] md:leading-[1.5] text-slate-11 font-normal">Here are a handful of features that will help you enjoy building static websites again.</p>
+                <h2 class="font-book font-styling w-full font-display mb-5 md:mb-3 leading-none text-left md:text-center text-[3rem] lg:text-[3.5rem] pistol-font  tracking-tight md:leading-[120%] font-gradient">This is Where the Real Fun Begins</h2>
+                <p class="sans mb-12 text-left w-full md:text-center max-w-3xl mx-auto opacity-60 text-[1.125rem] md:leading-[1.5] text-slate-11 font-normal">Here are a handful of features that will help you enjoy building static websites again.</p>
             </div>
 
             <div class="relative flex flex-col-reverse items-start p-px group rounded-2xl md:flex-row" style="background-image:linear-gradient(160deg,#e66735,#e335e2 50%,#73f7f8, #a729ed)">
@@ -17,7 +17,7 @@
 
                 <div class="absolute inset-0 w-full h-full duration-300 ease-out bg-black opacity-100 pointer-events-none group-hover:opacity-0 rounded-2xl"></div>
                 <div id="tailwind-section" class="w-full bg-black rounded-2xl ">
-                    <div class="relative flex flex-col items-start w-full p-6 sm:p-8  overflow-hidden ring-1 ring-white/[15%] radial-background bg-gradient-to-br from-neutral-950 to-black md:px-12 md:py-16 md:flex-row rounded-2xl">
+                    <div class="relative flex flex-col items-start w-full p-8  overflow-hidden ring-1 ring-white/[15%] radial-background bg-gradient-to-br from-neutral-950 to-black md:px-12 md:py-16 md:flex-row rounded-2xl">
                         <div class="flex-auto w-full">
                             <p class="relative inline-block mb-2 text-lg font-semibold tracking-tight text-transparent sm:text-xl opacity-90 group-hover:opacity-100">
                                 <span class="relative z-20 bg-clip-text bg-gradient-to-r from-neutral-400 via-neutral-100 to-neutral-500 group-hover:from-neutral-200 group-hover:via-neutral-100 group-hover:to-neutral-200">TailwindCSS Integration</span>
@@ -58,20 +58,20 @@
 
         </div>
 
-        <section id="page-section" class="relative flex items-stretch max-w-4xl mx-auto mt-10 space-x-10">
+        <section id="page-section" class="relative flex flex-col items-stretch max-w-4xl mx-auto mt-6 sm:mt-10 md:space-x-10 md:flex-row">
 
-            <div class="relative flex flex-col-reverse items-start w-1/2 p-px h-100 group rounded-2xl md:flex-row" style="background-image:linear-gradient(160deg,#e66735,#e335e2 50%,#73f7f8, #a729ed)">
+            <div class="relative flex flex-col-reverse items-start w-full p-px md:w-1/2 h-100 group rounded-2xl md:flex-row" style="background-image:linear-gradient(160deg,#e66735,#e335e2 50%,#73f7f8, #a729ed)">
                 <div class="absolute inset-0 w-full h-full duration-300 ease-out bg-black opacity-100 pointer-events-none group-hover:opacity-0 rounded-2xl"></div>
                 <div class="w-full h-full bg-black rounded-2xl">
                     <div class="relative flex flex-col items-start w-full h-full overflow-hidden ring-1 ring-white/[15%] radial-background bg-gradient-to-br from-neutral-950 to-black rounded-2xl">
-                        <div class="flex-auto p-12">
+                        <div class="flex-auto p-8 pb-0 md:p-12">
                             <p class="relative inline-block mb-2 text-xl font-semibold tracking-tight text-transparent opacity-90 group-hover:opacity-100">
                                 <span class="relative z-20 bg-clip-text bg-gradient-to-r from-neutral-400 via-neutral-100 to-neutral-500 group-hover:from-neutral-200 group-hover:via-neutral-100 group-hover:to-neutral-200">Page-based routing</span>
                             </p>
                             <div class="mb-6 space-y-4 text-sm leading-6 text-white/80 opacity-70 group-hover:opacity-100">
                                 <p>Add a new file to your <strong class="text-yellow-400">pages</strong> directory and Static will automatically create a <strong class="text-yellow-400">route</strong>.</p>
                             </div>
-                            <button hx-get="/docs/features/page-based-routing" hx-target="#site-content" hx-select="#site-content" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" @click="document.getElementById('header').dispatchEvent(new CustomEvent('set-page-active', { detail: { active: 'docs' }})); document.getElementById('header').dispatchEvent(new CustomEvent('set-page-full-width', { detail: {}})); route=$el.getAttribute('hx-get')" class="relative inline-block w-full px-4 py-2 text-xs font-medium text-center text-white bg-transparent rounded-full opacity-70 group-hover:opacity-100 group ring-1 ring-white/20 md:w-auto">
+                            <button hx-get="/docs/features/page-based-routing" hx-target="#site-content" hx-select="#site-content" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" @click="document.getElementById('header').dispatchEvent(new CustomEvent('set-page-active', { detail: { active: 'docs' }})); document.getElementById('header').dispatchEvent(new CustomEvent('set-page-full-width', { detail: {}})); route=$el.getAttribute('hx-get')" class="relative inline-block w-auto px-4 py-2 text-xs font-medium text-center text-white bg-transparent rounded-full opacity-70 group-hover:opacity-100 group ring-1 ring-white/20">
                                 <span>Learn more</span>
                                 <span class="text-[#e66735] group-hover:translate-x-1 inline-block ml-0.5 ease-out duration-300">&rarr;</span>
                             </button>
@@ -95,11 +95,11 @@
                 </div>
             </div>
 
-            <div class="relative flex flex-col-reverse w-1/2 p-px h-100 group rounded-2xl md:flex-row" style="background-image:linear-gradient(160deg,#e66735,#e335e2 50%,#73f7f8, #a729ed)">
+            <div class="relative flex flex-col-reverse w-full p-px mt-6 md:w-1/2 h-100 md:mt-0 group rounded-2xl md:flex-row" style="background-image:linear-gradient(160deg,#e66735,#e335e2 50%,#73f7f8, #a729ed)">
                 <div class="absolute inset-0 w-full h-full duration-300 ease-out bg-black opacity-100 pointer-events-none group-hover:opacity-0 rounded-2xl"></div>
                 <div id="layout-section" class="w-full h-full bg-black rounded-2xl">
                     <div class="relative flex flex-col items-start w-full h-full overflow-hidden ring-1 ring-white/[15%] radial-background bg-gradient-to-br from-neutral-950 to-black rounded-2xl">
-                        <div class="w-full p-12 pb-8">
+                        <div class="w-full p-8 pb-4 md:p-12 md:pb-8">
                             <p class="relative inline-block mb-2 text-xl font-semibold tracking-tight text-transparent opacity-90 group-hover:opacity-100">
                                 <span class="relative z-20 bg-clip-text bg-gradient-to-r from-neutral-400 via-neutral-100 to-neutral-500 group-hover:from-neutral-200 group-hover:via-neutral-100 group-hover:to-neutral-200">HTML Layouts</span>
                             </p>
@@ -138,10 +138,10 @@
 
                         </div>
 
-                        <div class="w-full p-12 pb-5">
+                        <div class="w-full p-8 md:p-12 md:pb-5">
     
                         
-                            <button hx-get="/docs/features/layouts" hx-target="#site-content" hx-select="#site-content" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" @click="document.getElementById('header').dispatchEvent(new CustomEvent('set-page-active', { detail: { active: 'docs' }})); document.getElementById('header').dispatchEvent(new CustomEvent('set-page-full-width', { detail: {}})); route=$el.getAttribute('hx-get')" class="relative inline-block w-full px-4 py-2 text-xs font-medium text-center text-white bg-transparent rounded-full opacity-70 group-hover:opacity-100 group ring-1 ring-white/20 md:w-auto">
+                            <button hx-get="/docs/features/layouts" hx-target="#site-content" hx-select="#site-content" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" @click="document.getElementById('header').dispatchEvent(new CustomEvent('set-page-active', { detail: { active: 'docs' }})); document.getElementById('header').dispatchEvent(new CustomEvent('set-page-full-width', { detail: {}})); route=$el.getAttribute('hx-get')" class="relative inline-block w-auto px-4 py-2 text-xs font-medium text-center text-white bg-transparent rounded-full opacity-70 group-hover:opacity-100 group ring-1 ring-white/20">
                                 <span>Learn more</span>
                                 <span class="text-[#e66735] group-hover:translate-x-1 inline-block ml-0.5 ease-out duration-300">&rarr;</span>
                             </button>
@@ -160,8 +160,8 @@
 
                 <div class="absolute inset-0 w-full h-full duration-300 ease-out bg-black opacity-100 pointer-events-none group-hover:opacity-0 rounded-2xl"></div>
                 <div id="include-section" class="w-full bg-black rounded-2xl ">
-                    <div class="relative flex flex-col-reverse items-start w-full p-8 pb-10 overflow-hidden ring-1 ring-white/[15%] radial-background bg-gradient-to-br from-neutral-950 to-black sm:px-12 sm:py-16 md:flex-row rounded-2xl">
-                        <div class="flex-auto">
+                    <div class="relative flex flex-col items-start w-full p-8  overflow-hidden ring-1 ring-white/[15%] radial-background bg-gradient-to-br from-neutral-950 to-black sm:px-12 sm:py-16 md:flex-row rounded-2xl">
+                        <div class="flex-auto mb-6 md:mb-0">
                             <p class="relative inline-block mb-2 text-xl font-semibold tracking-tight text-transparent opacity-90 group-hover:opacity-100">
                                 <span class="relative z-20 bg-clip-text bg-gradient-to-r from-neutral-400 via-neutral-100 to-neutral-500 group-hover:from-neutral-200 group-hover:via-neutral-100 group-hover:to-neutral-200">HTML Includes</span>
                             </p>
@@ -169,16 +169,16 @@
                                 <p>Create re-usable HTML elements by utilizing the <strong class="text-yellow-400">include</strong> tags, and use attributes to pass in data.</p>
                             </div>
 
-                            <pre id="include-code" class="absolute bottom-0 left-0 ml-12 translate-y-48 opacity-80"><code class="relative bottom-0 flex-shrink-0 w-auto px-2 py-1 leading-none text-[0.65rem] text-yellow-400 bg-gradient-to-b from-black to-neutral-950 font-bold border border-b-0 border-neutral-700 rounded-t-lg language-html">&lt;include src="header.html" logo="logo.png"&gt;&lt;/include&gt;</code></pre>
+                            <pre id="include-code" class="absolute bottom-0 left-0 hidden w-full translate-y-48 md:block md:ml-12 md:w-auto opacity-80"><code class="relative bottom-0 flex-shrink-0 w-auto px-2 py-1 leading-none text-[0.65rem] text-yellow-400 bg-gradient-to-b from-black to-neutral-950 font-bold border-t md:border border-b-0 border-neutral-700 md:rounded-t-lg language-html">&lt;include src="header.html" logo="logo.png"&gt;&lt;/include&gt;</code></pre>
                             
-                            <button hx-get="/docs/features/includes" hx-target="#site-content" hx-select="#site-content" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" @click="document.getElementById('header').dispatchEvent(new CustomEvent('set-page-active', { detail: { active: 'docs' }})); document.getElementById('header').dispatchEvent(new CustomEvent('set-page-full-width', { detail: {}})); route=$el.getAttribute('hx-get')" class="relative inline-block w-full px-4 py-2 text-xs font-medium text-center text-white bg-transparent rounded-full opacity-70 group-hover:opacity-100 group ring-1 ring-white/20 md:w-auto">
+                            <button hx-get="/docs/features/includes" hx-target="#site-content" hx-select="#site-content" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" @click="document.getElementById('header').dispatchEvent(new CustomEvent('set-page-active', { detail: { active: 'docs' }})); document.getElementById('header').dispatchEvent(new CustomEvent('set-page-full-width', { detail: {}})); route=$el.getAttribute('hx-get')" class="relative inline-block w-auto px-4 py-2 text-xs font-medium text-center text-white bg-transparent rounded-full w-autpo opacity-70 group-hover:opacity-100 group ring-1 ring-white/20">
                                 <span>Learn more</span>
                                 <span class="text-[#e66735] group-hover:translate-x-1 inline-block ml-0.5 ease-out duration-300">&rarr;</span>
                             </button>
                         </div>
                         <div class="flex-none w-full mb-8 md:mb-0 md:ml-8 md:w-1/2">
                             <div id="include-code-box" class="w-full max-w-lg translate-y-24 md:absolute md:pl-5">
-                                <div class="relative -translate-y-12 h-[500px] border rounded-lg border-white/20">
+                                <div class="relative md:-translate-y-12 h-auto md:h-[500px] border rounded-lg border-white/20">
                                     <div class="flex items-center w-full h-10 pl-4 duration-300 ease-out bg-transparent border-b group hover:bg-white/5 border-white/20 opacity-80">
                                         <div class="flex space-x-1.5 opacity-60 group-hover:opacity-100 ease-out duration-300">
                                             <div class="w-2.5 h-2.5 bg-red-400 rounded-full"></div>
@@ -210,20 +210,20 @@
             </div>
         </div>
 
-        <section class="relative flex items-stretch max-w-4xl mx-auto mt-10 space-x-10">
+        <section class="relative flex flex-col items-stretch max-w-4xl mx-auto mt-6 md:mt-10 md:space-x-10 md:flex-row">
 
-            <div class="relative flex flex-col-reverse items-start w-1/2 p-px h-100 group rounded-2xl md:flex-row" style="background-image:linear-gradient(160deg,#e66735,#e335e2 50%,#73f7f8, #a729ed)">
+            <div class="relative flex flex-col-reverse items-start w-full p-px md:w-1/2 h-100 group rounded-2xl md:flex-row" style="background-image:linear-gradient(160deg,#e66735,#e335e2 50%,#73f7f8, #a729ed)">
                 <div class="absolute inset-0 w-full h-full duration-300 ease-out bg-black opacity-100 pointer-events-none group-hover:opacity-0 rounded-2xl"></div>
                 <div id="content-section" class="w-full h-full bg-black rounded-2xl">
                     <div class="relative flex flex-col items-start w-full h-full overflow-hidden ring-1 ring-white/[15%] radial-background bg-gradient-to-br from-neutral-950 to-black rounded-2xl">
-                        <div class="flex-auto p-12">
+                        <div class="flex-auto p-8 md:p-12">
                             <p class="relative inline-block mb-2 text-xl font-semibold tracking-tight text-transparent opacity-90 group-hover:opacity-100">
                                 <span class="relative z-20 bg-clip-text bg-gradient-to-r from-neutral-400 via-neutral-100 to-neutral-500 group-hover:from-neutral-200 group-hover:via-neutral-100 group-hover:to-neutral-200">Create Content</span>
                             </p>
                             <div class="mb-6 space-y-4 text-sm leading-6 text-white/80 opacity-70 group-hover:opacity-100">
                                 <p>Add a Markdown file to the <strong class="text-yellow-400">content</strong> folder and it will automatically create a page.</p>
                             </div>
-                            <button hx-get="/docs/features/content" hx-target="#site-content" hx-select="#site-content" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" @click="document.getElementById('header').dispatchEvent(new CustomEvent('set-page-active', { detail: { active: 'docs' }})); document.getElementById('header').dispatchEvent(new CustomEvent('set-page-full-width', { detail: {}})); route=$el.getAttribute('hx-get')" class="relative inline-block w-full px-4 py-2 text-xs font-medium text-center text-white bg-transparent rounded-full opacity-70 group-hover:opacity-100 group ring-1 ring-white/20 md:w-auto">
+                            <button hx-get="/docs/features/content" hx-target="#site-content" hx-select="#site-content" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" @click="document.getElementById('header').dispatchEvent(new CustomEvent('set-page-active', { detail: { active: 'docs' }})); document.getElementById('header').dispatchEvent(new CustomEvent('set-page-full-width', { detail: {}})); route=$el.getAttribute('hx-get')" class="relative inline-block w-auto px-4 py-2 text-xs font-medium text-center text-white bg-transparent rounded-full opacity-70 group-hover:opacity-100 group ring-1 ring-white/20">
                                 <span>Learn more</span>
                                 <span class="text-[#e66735] group-hover:translate-x-1 inline-block ml-0.5 ease-out duration-300">&rarr;</span>
                             </button>
@@ -247,11 +247,11 @@
                 </div>
             </div>
 
-            <div class="relative flex flex-col-reverse w-1/2 p-px h-100 group rounded-2xl md:flex-row" style="background-image:linear-gradient(160deg,#e66735,#e335e2 50%,#73f7f8, #a729ed)">
+            <div class="relative flex flex-col-reverse w-full p-px mt-6 md:w-1/2 md:mt-0 h-100 group rounded-2xl md:flex-row" style="background-image:linear-gradient(160deg,#e66735,#e335e2 50%,#73f7f8, #a729ed)">
                 <div class="absolute inset-0 w-full h-full duration-300 ease-out bg-black opacity-100 pointer-events-none group-hover:opacity-0 rounded-2xl"></div>
                 <div id="reload-section" class="w-full h-full bg-black rounded-2xl">
                     <div class="relative flex flex-col items-start w-full h-full overflow-hidden ring-1 ring-white/[15%] radial-background bg-gradient-to-br from-neutral-950 to-black rounded-2xl">
-                        <div class="w-full p-12 pb-8">
+                        <div class="w-full p-8 pb-8 md:p-12">
                             <p class="relative inline-block mb-2 text-xl font-semibold tracking-tight text-transparent opacity-90 group-hover:opacity-100">
                                 <span class="relative z-20 bg-clip-text bg-gradient-to-r from-neutral-400 via-neutral-100 to-neutral-500 group-hover:from-neutral-200 group-hover:via-neutral-100 group-hover:to-neutral-200">Live Reloading</span>
                             </p>
@@ -259,19 +259,19 @@
                                 <p>Update your code and see the results instantly with <strong class="text-yellow-400">live-reloading</strong>.</p>
                             </div>
                         </div>
-                        <div class="w-full p-12 pt-0 pb-5">
+                        <div class="w-full p-8 pt-0 pb-5 md:p-12">
     
                         
-                            <button hx-get="/docs/features/live-reloading" hx-target="#site-content" hx-select="#site-content" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" @click="document.getElementById('header').dispatchEvent(new CustomEvent('set-page-active', { detail: { active: 'docs' }})); document.getElementById('header').dispatchEvent(new CustomEvent('set-page-full-width', { detail: {}})); route=$el.getAttribute('hx-get')" class="relative inline-block w-full px-4 py-2 text-xs font-medium text-center text-white bg-transparent rounded-full opacity-70 group-hover:opacity-100 group ring-1 ring-white/20 md:w-auto">
+                            <button hx-get="/docs/features/live-reloading" hx-target="#site-content" hx-select="#site-content" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" @click="document.getElementById('header').dispatchEvent(new CustomEvent('set-page-active', { detail: { active: 'docs' }})); document.getElementById('header').dispatchEvent(new CustomEvent('set-page-full-width', { detail: {}})); route=$el.getAttribute('hx-get')" class="relative inline-block w-auto px-4 py-2 text-xs font-medium text-center text-white bg-transparent rounded-full opacity-70 group-hover:opacity-100 group ring-1 ring-white/20">
                                 <span>Learn more</span>
                                 <span class="text-[#e66735] group-hover:translate-x-1 inline-block ml-0.5 ease-out duration-300">&rarr;</span>
                             </button>
                             
                         </div>
 
-                        <div class="relative flex items-end w-full h-full pl-8">
+                        <div class="relative flex items-end w-full h-full pl-4 md:pl-8">
                             <div id="reload-code-box" class="relative translate-y-24">
-                                <img src="/assets/images/live-reload.png" class="w-full pointer-events-none" />
+                                <img src="/assets/images/live-reload.png" class="w-full pointer-events-none " />
                             </div>
                         </div>
 
@@ -283,7 +283,7 @@
         </section>
 
         <div class="flex items-center justify-center max-w-4xl py-20 mx-auto">
-            <button hx-get="/docs/getting-started" hx-target="#site-content" hx-select="#site-content" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" @click="document.getElementById('header').dispatchEvent(new CustomEvent('set-page-active', { detail: { active: 'docs' }})); document.getElementById('header').dispatchEvent(new CustomEvent('set-page-full-width', { detail: {}})); route=$el.getAttribute('hx-get')" data-docs class="relative inline-block w-full px-4 py-2 text-xs font-medium text-center text-white bg-transparent rounded-full opacity-70 group-hover:opacity-100 group ring-1 ring-white/20 md:w-auto">
+            <button hx-get="/docs/getting-started" hx-target="#site-content" hx-select="#site-content" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" @click="document.getElementById('header').dispatchEvent(new CustomEvent('set-page-active', { detail: { active: 'docs' }})); document.getElementById('header').dispatchEvent(new CustomEvent('set-page-full-width', { detail: {}})); route=$el.getAttribute('hx-get')" data-docs class="relative inline-block px-4 py-2 text-xs font-medium text-center text-white bg-transparent rounded-full opacity-70 group-hover:opacity-100 group ring-1 ring-white/20">
                 <span>View the docs to view all features</span>
                 <span class="text-[#e66735] group-hover:translate-x-1 inline-block ml-0.5 ease-out duration-300">&rarr;</span>
             </button>

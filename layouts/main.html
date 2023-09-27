@@ -13,21 +13,35 @@
             color: #f8e164;
         }
 
+        @media(min-width: 768px) {
+          .features-tailwind.hljs{
+            overflow:hidden;
+            padding-top: 15px !important;
+              padding-left: 20px !important;
+              padding-right: 190px !important;
+              padding-bottom: 150px !important;
+              background-size:top right;
+              /* background-image:url('/assets/images/page.svg'); */
+          }
+        }
+
+
         .features-tailwind.hljs{
           overflow:hidden;
-          padding-top: 15px !important;
-            padding-left: 20px !important;
-            padding-right: 190px !important;
-            padding-bottom: 150px !important;
-            background-size:top right;
-            /* background-image:url('/assets/images/page.svg'); */
+          padding: 15px;
+        }
+
+        @media(min-width: 768px) {
+          .features-layouts.hljs{
+            padding-top: 30px !important;
+            padding-left: 45px !important;
+            padding-bottom: 30px !important;
+          }
         }
 
         .features-layouts.hljs{
-          padding-top: 30px !important;
-          padding-left: 45px !important;
-          padding-bottom: 30px !important;
-        }
+            padding: 15px;
+          }
 
         .hljs-addition,
         .hljs-code,

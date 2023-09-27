@@ -1,4 +1,4 @@
-<section id="how-to-use-it" class="relative z-20 w-full h-auto text-white bg-black">
+<section id="how-to-use-it" class="relative z-20 w-full h-auto px-6 text-white bg-black lg:px-0">
 
 
 
@@ -30,20 +30,18 @@
         
         <div class="relative z-30 items-center w-full max-w-4xl pb-20 mx-auto">
             <div id="how-to-use-it-header" class="flex flex-col items-center justify-center mb-12">
-                <h2 class="font-book font-styling font-display mb-3 text-center md:text-left text-[2.8rem] md:text-[3.5rem] pistol-font  tracking-tight leading-[120%] font-gradient">How do you use it?</h2>
-                <p class="sans  text-center md:text-center max-w-xl mx-auto text-white/60 text-base md:text-[1.125rem] md:leading-[1.5] text-slate-11 font-normal">After you <button hx-get="/docs/install" hx-target="#site-content" hx-select="#site-content" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" @click="document.getElementById('header').dispatchEvent(new CustomEvent('set-page-active', { detail: { active: 'docs' }})); document.getElementById('header').dispatchEvent(new CustomEvent('set-page-full-width', { detail: {}})); route=$el.getAttribute('hx-get')" class="text-yellow-300 underline opacity-100">install the Static NPM package</button> you'll have three new commands that you can use in your command prompt.</p>
+                <h2 class="font-book font-styling w-full font-display mb-5 md:mb-3 leading-none text-left md:text-center text-[3rem] lg:text-[3.5rem] pistol-font  tracking-tight md:leading-[120%] font-gradient">How do you use it?</h2>
+                <p class="sans text-left w-full md:text-center md:max-w-xl mx-auto opacity-60 text-[1.125rem] md:leading-[1.5] text-slate-11 font-normal">After you <button hx-get="/docs/install" hx-target="#site-content" hx-select="#site-content" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" @click="document.getElementById('header').dispatchEvent(new CustomEvent('set-page-active', { detail: { active: 'docs' }})); document.getElementById('header').dispatchEvent(new CustomEvent('set-page-full-width', { detail: {}})); route=$el.getAttribute('hx-get')" class="text-yellow-300 underline opacity-100">install the Static NPM package</button> you'll have three new commands that you can use in your command prompt.</p>
                 <!-- <p><a href="https://www.youtube.com/watch?v=M-aSjHnbw18&t=23s" target="_blank" class="text-white underline">🎸 It's as easy as 1 2 3, as simple as Do re mi...</a></p> -->
             </div>
-            <div class="relative grid grid-cols-1 gap-20 p-px mb-0 overflow-hidden list-none border border-neutral-700 rounded-2xl group rounded-t-2xl lg:gap-0 lg:grid-cols-1 radial-background border-white/5 bg-gradient-to-b from-neutral-950 to-black">
+            <div class="relative grid grid-cols-1 p-px mb-0 overflow-hidden list-none border border-neutral-700 rounded-2xl group rounded-t-2xl lg:grid-cols-1 radial-background border-white/5 bg-gradient-to-b from-neutral-950 to-black">
                 <div class="absolute inset-0 w-full h-full duration-300 ease-out opacity-0 group-hover:opacity-100 bg-gradient-to-br from-green-400 via-pink-400 to-blue-600"></div>
-                <ul class="relative grid grid-cols-1 gap-20 overflow-hidden list-none bg-black radial-background rounded-2xl group rounded-t-2xl lg:gap-0 lg:grid-cols-1" role="list">
+                <ul class="relative grid grid-cols-1 overflow-hidden list-none bg-black radial-background rounded-2xl group rounded-t-2xl lg:grid-cols-1" role="list">
 
                 
                 <li class="relative pb-0 overflow-hidden rounded-t-2xl group">
                     <div class="overflow-hidden rounded-t-2xl backdrop-blur-2xl">
-                        <div class="relative flex items-center p-4 pb-0 shadow-2xl -0 rounded-t-2xl lg:p-10 lg:py-12">
-                            <div class="absolute top-0 right-0 w-full h-px -translate-y-px opacity-100 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
-                            <div class="absolute bottom-0 left-0 w-full h-px translate-y-px opacity-100 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+                        <div class="relative flex flex-col items-center p-8 pb-0 shadow-2xl md:p-10 md:flex-row -0 rounded-t-2xl">
                             
                             <div class="flex flex-col items-start justify-start w-1/2 pr-10">
                                 <div class="flex items-center space-x-1.5">
@@ -51,7 +49,7 @@
                                     <h3 class="text-2xl pistol-font lg:text-4xl"><span class="text-green-400">Static</span> <span class="text-pink-400">New</span></h3>
                                 </div>
                                 <p class="mt-2 text-lg text-white/80">The <span class="text-base font-bold text-white">static new</span></span> command will create<br> a new site in the folder you specify.</p>
-                                <p class="text-[0.6rem] text-white/60 mt-3">This command will setup a new site and boot it up on a dev server</p>
+                                <p class="text-[0.6rem] text-white/60 mt-3 lg:block hidden">This command will setup a new site and boot it up on a dev server</p>
                                 
                             </div>
                             <div class="relative w-1/2 overflow-hidden border rounded-lg border-white/20">
