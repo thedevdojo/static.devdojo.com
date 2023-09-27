@@ -7,7 +7,7 @@
             <include src="docs-sidebar.html"></include>
         </div>
 
-        <div id="docs-content" class="flex items-start">
+        <div id="docs-content" class="flex items-start pb-10">
             <div class="max-w-4xl pt-24 mx-auto mt-3 mr-64">
 
                 <include src="docs/home-header.html"></include>
@@ -29,7 +29,7 @@
                     </If>
 
                     <If condition="frontmatter.prevURL == 'undefined' || frontmatter.prevURL == null || frontmatter.prevURL == ''">
-                        <div class="flex items-center w-1/2 py-10 text-sm ease-linear border rounded-md opacity-50 duration-50 border-neutral-700 text-neutral-400 group bg-neutral-900">
+                        <div class="flex items-center justify-center w-1/2 py-10 text-sm ease-linear border rounded-md opacity-50 duration-50 border-neutral-700 text-neutral-400 group bg-neutral-900">
                             No Previous Section
                         </div>
                     </If>
@@ -46,7 +46,7 @@
                     </If>
 
                     <If condition="frontmatter.nextURL == 'undefined' || frontmatter.nextURL == null || frontmatter.nextURL == ''">
-                        <div class="flex items-center w-1/2 py-10 text-sm ease-linear border rounded-md opacity-50 duration-50 border-neutral-700 text-neutral-400 group bg-neutral-900">
+                        <div class="flex items-center justify-center w-1/2 py-10 text-sm ease-linear border rounded-md opacity-50 duration-50 border-neutral-700 text-neutral-400 group bg-neutral-900">
                             No Next Section
                         </div>
                     </If>

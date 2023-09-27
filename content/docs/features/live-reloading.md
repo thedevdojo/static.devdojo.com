@@ -9,7 +9,7 @@ prevURL: '/docs/features/content'
 
 
 <div class="flex items-start px-5 py-5 my-6 mt-1 leading-[18px] bg-neutral-950 border border-yellow-400 rounded-md">
-   <img class="w-auto h-20 my-0 mr-5" src="/assets/images/icons/time.png" />
+   <img class="w-auto h-20 my-0 mr-5" src="/assets/images/icons/reload.png" />
    <div>
       <h1 class="mb-0">Live Reloading</h1>
       <p class="my-1">See your site changes in real-time without having to refresh the page. Live-reloading reloads the page when you make any changes to your code.</p>
@@ -24,8 +24,8 @@ Live reload is automatically injected into the page when your run `static dev`, 
 
 ## Configuration
 
-Right now there are no configuration options with live-reload, it just works out of the box. But, if necessary we may add some additional configurations in the future. Right now it works with all the files in your site; however, there may be some edge-cases where you want to create custom rules. Be sure to check back for updated configuration options or if you would like to contribute code, make sure to open a PR in the [Github Repo](https://github.com/thedevdojo/static).
+Right now there are no configuration options with live-reload, it just works out of the box. But, if necessary we may add some additional configs in the future. Right now it works with all the files in your site; however, there may be some edge-cases where you want to create custom rules. Be sure to check back for updated options or if you would like to contribute code, make sure to open a PR in the <a href="https://github.com/thedevdojo/static" target="_blank" class="text-yellow-300 underline">Github Repo</a>.
 
-No more manually refreshing like a chump! Live-reload is here to help you save time and see your changes instantly 💪
+Save time and see changes instantly with Live-reload! 💪
 
 
