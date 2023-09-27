@@ -1,4 +1,4 @@
-<div hx-get="/docs/getting-started" hx-target="#site-content" hx-select="#site-content" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" @click="document.getElementById('header').dispatchEvent(new CustomEvent('set-page-active', { detail: { active: 'docs' }})); document.getElementById('header').dispatchEvent(new CustomEvent('set-page-full-width', { detail: {}})); route=$el.getAttribute('hx-get')" data-docs class="relative flex flex-col-reverse group mt-16 cursor-pointer items-center justify-between w-full overflow-hidden ring-1 ring-white/[5%] border-t border-neutral-700 radial-background bg-gradient-to-br from-neutral-950 to-black px-8 py-6 md:flex-row">
+<div hx-get="/docs/getting-started" hx-target="#site-content" hx-select="#site-content" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" @click="document.getElementById('header').dispatchEvent(new CustomEvent('set-page-active', { detail: { active: 'docs' }})); document.getElementById('header').dispatchEvent(new CustomEvent('set-page-full-width', { detail: {}})); route=$el.getAttribute('hx-get')" data-docs class="relative flex flex-col-reverse group mt-16 cursor-pointer items-center justify-between w-full overflow-hidden ring-1 ring-white/[5%] border-t border-neutral-700 radial-background bg-black px-8 py-6 md:flex-row">
     <div class="flex items-center justify-between w-full max-w-6xl pl-10 pr-32 mx-auto">
         <div class="relative pr-16">
             <div class="relative flex items-center mb-2 space-x-2 ">
@@ -12,7 +12,7 @@
         </div>
         <div class="relative flex-shrink-0">
             <button hx-get="/docs/getting-started" hx-target="#site-content" hx-select="#site-content" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" @click="document.getElementById('header').dispatchEvent(new CustomEvent('set-page-active', { detail: { active: 'docs' }})); document.getElementById('header').dispatchEvent(new CustomEvent('set-page-full-width', { detail: {}})); route=$el.getAttribute('hx-get')" data-docs="" class="relative inline-block w-full px-4 py-2 text-xs font-medium text-center text-white bg-transparent rounded-full opacity-70 group-hover:opacity-100 group ring-1 ring-white/20 md:w-auto">
-                <span>View the Github Action docs</span>
+                <span>View the Documentation</span>
                 <span class="text-[#e66735] group-hover:translate-x-1 inline-block ml-0.5 ease-out duration-300">→</span>
             </button>
         </div>

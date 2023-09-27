@@ -31,10 +31,10 @@
         <div class="relative z-30 items-center w-full max-w-4xl pb-20 mx-auto">
             <div id="how-to-use-it-header" class="flex flex-col items-center justify-center mb-12">
                 <h2 class="font-book font-styling font-display mb-3 text-center md:text-left text-[28rem] md:text-[3.5rem] pistol-font  tracking-tight leading-[120%] font-gradient">How do you use it?</h2>
-                <p class="sans  text-center md:text-center max-w-xl mx-auto text-white/60 text-base md:text-[1.125rem] md:leading-[1.5] text-slate-11 font-normal">After you <a href="" class="text-yellow-300 underline opacity-100">install the Static NPM package</a> you'll have three new commands that you can use in your command prompt.</p>
+                <p class="sans  text-center md:text-center max-w-xl mx-auto text-white/60 text-base md:text-[1.125rem] md:leading-[1.5] text-slate-11 font-normal">After you <button hx-get="/docs/install" hx-target="#site-content" hx-select="#site-content" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" @click="document.getElementById('header').dispatchEvent(new CustomEvent('set-page-active', { detail: { active: 'docs' }})); document.getElementById('header').dispatchEvent(new CustomEvent('set-page-full-width', { detail: {}})); route=$el.getAttribute('hx-get')" class="text-yellow-300 underline opacity-100">install the Static NPM package</button> you'll have three new commands that you can use in your command prompt.</p>
                 <!-- <p><a href="https://www.youtube.com/watch?v=M-aSjHnbw18&t=23s" target="_blank" class="text-white underline">🎸 It's as easy as 1 2 3, as simple as Do re mi...</a></p> -->
             </div>
-            <div class="relative grid grid-cols-1 gap-20 p-px mb-0 overflow-hidden list-none rounded-2xl group rounded-t-2xl lg:gap-0 lg:grid-cols-1 radial-background border-white/5 bg-gradient-to-b from-neutral-950 to-black">
+            <div class="relative grid grid-cols-1 gap-20 p-px mb-0 overflow-hidden list-none border border-neutral-700 rounded-2xl group rounded-t-2xl lg:gap-0 lg:grid-cols-1 radial-background border-white/5 bg-gradient-to-b from-neutral-950 to-black">
                 <div class="absolute inset-0 w-full h-full duration-300 ease-out opacity-0 group-hover:opacity-100 bg-gradient-to-br from-green-400 via-pink-400 to-blue-600"></div>
                 <ul class="relative grid grid-cols-1 gap-20 overflow-hidden list-none bg-black radial-background rounded-2xl group rounded-t-2xl lg:gap-0 lg:grid-cols-1" role="list">
 
