@@ -16,14 +16,14 @@
                 </div>
 
                 <div class="absolute inset-0 w-full h-full duration-300 ease-out bg-black opacity-100 pointer-events-none group-hover:opacity-0 rounded-2xl"></div>
-                <div class="w-full bg-black rounded-2xl ">
+                <div id="tailwind-section" class="w-full bg-black rounded-2xl ">
                     <div class="relative flex flex-col items-start w-full p-6 sm:p-8  overflow-hidden ring-1 ring-white/[15%] radial-background bg-gradient-to-br from-neutral-950 to-black md:px-12 md:py-16 md:flex-row rounded-2xl">
                         <div class="flex-auto w-full">
                             <p class="relative inline-block mb-2 text-lg font-semibold tracking-tight text-transparent sm:text-xl opacity-90 group-hover:opacity-100">
                                 <span class="relative z-20 bg-clip-text bg-gradient-to-r from-neutral-400 via-neutral-100 to-neutral-500 group-hover:from-neutral-200 group-hover:via-neutral-100 group-hover:to-neutral-200">TailwindCSS Integration</span>
                             </p>
                             <div class="mb-6 space-y-4 text-xs sm:text-sm sm:leading-6 text-white/80 opacity-70 group-hover:opacity-100">
-                                <p>Add the <code class="text-yellow-400">{tailwindcss}</code> shortcode to the head of your HTML file and you're ready to rock!</p>
+                                <p>Add the <code id="tailwind-code" class="font-bold text-yellow-400 scale-50 opacity-50">{tailwindcss}</code> shortcode to the head of your HTML file and you're ready to rock!</p>
                             </div>
                             <button hx-get="/docs/features/tailwindcss" hx-target="#site-content" hx-select="#site-content" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" @click="document.getElementById('header').dispatchEvent(new CustomEvent('set-page-active', { detail: { active: 'docs' }})); document.getElementById('header').dispatchEvent(new CustomEvent('set-page-full-width', { detail: {}})); route=$el.getAttribute('hx-get')" class="relative inline-block w-auto px-4 py-2 text-xs font-medium text-center text-white bg-transparent rounded-full opacity-70 group-hover:opacity-100 group ring-1 ring-white/20">
                                 <span>Learn more</span>
@@ -31,7 +31,7 @@
                             </button>
                         </div>
                         <div class="flex-none w-full mt-10 mb-0 md:ml-8 md:w-1/2 md:mt-0">
-                            <div class="w-full md:max-w-lg md:absolute md:pl-5">
+                            <div id="tailwind-code-box" class="w-full translate-y-20 md:max-w-lg md:absolute md:pl-5">
                                 <div class="relative overflow-hidden border rounded-lg md:-translate-y-12 border-white/20">
                                     <div class="flex items-center w-full h-10 pl-4 duration-300 ease-out bg-transparent border-b group hover:bg-white/5 border-white/20 opacity-80">
                                         <div class="flex space-x-1.5 opacity-60 group-hover:opacity-100 ease-out duration-300">
@@ -58,7 +58,7 @@
 
         </div>
 
-        <section class="relative flex items-stretch max-w-4xl mx-auto mt-10 space-x-10">
+        <section id="page-section" class="relative flex items-stretch max-w-4xl mx-auto mt-10 space-x-10">
 
             <div class="relative flex flex-col-reverse items-start w-1/2 p-px h-100 group rounded-2xl md:flex-row" style="background-image:linear-gradient(160deg,#e66735,#e335e2 50%,#73f7f8, #a729ed)">
                 <div class="absolute inset-0 w-full h-full duration-300 ease-out bg-black opacity-100 pointer-events-none group-hover:opacity-0 rounded-2xl"></div>
@@ -69,7 +69,7 @@
                                 <span class="relative z-20 bg-clip-text bg-gradient-to-r from-neutral-400 via-neutral-100 to-neutral-500 group-hover:from-neutral-200 group-hover:via-neutral-100 group-hover:to-neutral-200">Page-based routing</span>
                             </p>
                             <div class="mb-6 space-y-4 text-sm leading-6 text-white/80 opacity-70 group-hover:opacity-100">
-                                <p>Creating a new <span class="text-yellow-400">route</span> is as simple as creating a new <code class="text-yellow-400">html</code> file in the pages folder.</p>
+                                <p>Add a new file to your <strong class="text-yellow-400">pages</strong> directory and Static will automatically create a <strong class="text-yellow-400">route</strong>.</p>
                             </div>
                             <button hx-get="/docs/features/page-based-routing" hx-target="#site-content" hx-select="#site-content" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" @click="document.getElementById('header').dispatchEvent(new CustomEvent('set-page-active', { detail: { active: 'docs' }})); document.getElementById('header').dispatchEvent(new CustomEvent('set-page-full-width', { detail: {}})); route=$el.getAttribute('hx-get')" class="relative inline-block w-full px-4 py-2 text-xs font-medium text-center text-white bg-transparent rounded-full opacity-70 group-hover:opacity-100 group ring-1 ring-white/20 md:w-auto">
                                 <span>Learn more</span>
@@ -77,7 +77,7 @@
                             </button>
                         </div>
                         <div class="relative pl-10">
-                            <div class="ring-1 ring-white/[15%] rounded-tl-lg opacity-80 group-hover:opacity-100">
+                            <div id="page-code-box" class="ring-1 translate-y-32 ring-white/[15%] rounded-tl-lg opacity-80 group-hover:opacity-100">
                                 <div class="flex items-center w-full h-10 pl-4 duration-300 ease-out bg-transparent border-b group hover:bg-white/5 border-white/20 opacity-80">
                                     <div class="flex space-x-1.5 group-hover:opacity-100 ease-out duration-300">
                                         <div class="w-2.5 h-2.5 bg-red-400 rounded-full"></div>
@@ -97,19 +97,19 @@
 
             <div class="relative flex flex-col-reverse w-1/2 p-px h-100 group rounded-2xl md:flex-row" style="background-image:linear-gradient(160deg,#e66735,#e335e2 50%,#73f7f8, #a729ed)">
                 <div class="absolute inset-0 w-full h-full duration-300 ease-out bg-black opacity-100 pointer-events-none group-hover:opacity-0 rounded-2xl"></div>
-                <div class="w-full h-full bg-black rounded-2xl">
+                <div id="layout-section" class="w-full h-full bg-black rounded-2xl">
                     <div class="relative flex flex-col items-start w-full h-full overflow-hidden ring-1 ring-white/[15%] radial-background bg-gradient-to-br from-neutral-950 to-black rounded-2xl">
                         <div class="w-full p-12 pb-8">
                             <p class="relative inline-block mb-2 text-xl font-semibold tracking-tight text-transparent opacity-90 group-hover:opacity-100">
                                 <span class="relative z-20 bg-clip-text bg-gradient-to-r from-neutral-400 via-neutral-100 to-neutral-500 group-hover:from-neutral-200 group-hover:via-neutral-100 group-hover:to-neutral-200">HTML Layouts</span>
                             </p>
                             <div class="space-y-4 text-sm leading-6 text-white/80 opacity-70 group-hover:opacity-100">
-                                <p>Create simple HTML <span class="text-yellow-400">layouts</span> for your website.</p>
+                                <p>Create re-useable <strong class="text-yellow-400">HTML layouts</strong>,</p>
                             </div>
                         </div>
 
                         <div class="relative w-full">
-                            <pre class="text-sm whitespace-pre group"><code class="bg-black border-t border-b opacity-80 group-hover:opacity-100 border-gray-200/20 features-layouts group-hover:bg-white/5 language-html">&lt;!DOCTYPE html&gt;
+                            <pre id="layout-code-box-1" class="text-sm whitespace-pre translate-y-12 group"><code class="bg-black border-t border-b opacity-80 group-hover:opacity-100 border-gray-200/20 features-layouts group-hover:bg-white/5 language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
     &lt;title&gt;&#123;title&#125;&lt;/title&gt;
@@ -122,15 +122,15 @@
 
 <div class="w-full px-12 py-6">
     
-    <div class="space-y-4 text-sm leading-6 text-white/80 opacity-70 group-hover:opacity-100">
-        <p>And re-use that layout in any number of pages.</p>
+    <div id="layout-text" class="space-y-4 text-sm leading-6 translate-y-16 text-white/80 opacity-70 group-hover:opacity-100">
+        <p>and use them with any number of pages.</p>
     </div>
     
     
 </div>
 
 <div class="relative w-full">
-    <pre class="text-sm whitespace-pre group"><code class="bg-black border-t border-b opacity-80 group-hover:opacity-100 border-gray-200/20 features-layouts group-hover:bg-white/5 language-html">&lt;layout title=&quot;Title&quot; src=&quot;main.html&quot;&gt;
+    <pre id="layout-code-box-2"  class="text-sm whitespace-pre translate-y-20 group"><code class="bg-black border-t border-b opacity-80 group-hover:opacity-100 border-gray-200/20 features-layouts group-hover:bg-white/5 language-html">&lt;layout title=&quot;Title&quot; src=&quot;main.html&quot;&gt;
 
     &lt;h1&gt;Layouts Rock &#x1F918;&lt;/h1&gt;
     
@@ -159,22 +159,25 @@
             <div class="relative flex flex-col-reverse items-start p-px group rounded-2xl md:flex-row" style="background-image:linear-gradient(160deg,#e66735,#e335e2 50%,#73f7f8, #a729ed)">
 
                 <div class="absolute inset-0 w-full h-full duration-300 ease-out bg-black opacity-100 pointer-events-none group-hover:opacity-0 rounded-2xl"></div>
-                <div class="w-full bg-black rounded-2xl ">
+                <div id="include-section" class="w-full bg-black rounded-2xl ">
                     <div class="relative flex flex-col-reverse items-start w-full p-8 pb-10 overflow-hidden ring-1 ring-white/[15%] radial-background bg-gradient-to-br from-neutral-950 to-black sm:px-12 sm:py-16 md:flex-row rounded-2xl">
                         <div class="flex-auto">
                             <p class="relative inline-block mb-2 text-xl font-semibold tracking-tight text-transparent opacity-90 group-hover:opacity-100">
                                 <span class="relative z-20 bg-clip-text bg-gradient-to-r from-neutral-400 via-neutral-100 to-neutral-500 group-hover:from-neutral-200 group-hover:via-neutral-100 group-hover:to-neutral-200">HTML Includes</span>
                             </p>
                             <div class="mb-6 space-y-4 text-sm leading-6 text-white/80 opacity-70 group-hover:opacity-100">
-                                <p>Re-using HTML code is easy with the <code class="font-bold text-white">include</code> tags. <br> ex: <code class="text-yellow-400">&lt;include src="header.html"&gt;&lt;/include&gt;</code></p>
+                                <p>Create re-usable HTML elements by utilizing the <strong class="text-yellow-400">include</strong> tags, and use attributes to pass in data.</p>
                             </div>
+
+                            <pre id="include-code" class="absolute bottom-0 left-0 ml-12 translate-y-48 opacity-80"><code class="relative bottom-0 flex-shrink-0 w-auto px-2 py-1 leading-none text-[0.65rem] text-yellow-400 bg-gradient-to-b from-black to-neutral-950 font-bold border border-b-0 border-neutral-700 rounded-t-lg language-html">&lt;include src="header.html" logo="logo.png"&gt;&lt;/include&gt;</code></pre>
+                            
                             <button hx-get="/docs/features/includes" hx-target="#site-content" hx-select="#site-content" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" @click="document.getElementById('header').dispatchEvent(new CustomEvent('set-page-active', { detail: { active: 'docs' }})); document.getElementById('header').dispatchEvent(new CustomEvent('set-page-full-width', { detail: {}})); route=$el.getAttribute('hx-get')" class="relative inline-block w-full px-4 py-2 text-xs font-medium text-center text-white bg-transparent rounded-full opacity-70 group-hover:opacity-100 group ring-1 ring-white/20 md:w-auto">
                                 <span>Learn more</span>
                                 <span class="text-[#e66735] group-hover:translate-x-1 inline-block ml-0.5 ease-out duration-300">&rarr;</span>
                             </button>
                         </div>
                         <div class="flex-none w-full mb-8 md:mb-0 md:ml-8 md:w-1/2">
-                            <div class="w-full max-w-lg md:absolute md:pl-5">
+                            <div id="include-code-box" class="w-full max-w-lg translate-y-24 md:absolute md:pl-5">
                                 <div class="relative -translate-y-12 h-[500px] border rounded-lg border-white/20">
                                     <div class="flex items-center w-full h-10 pl-4 duration-300 ease-out bg-transparent border-b group hover:bg-white/5 border-white/20 opacity-80">
                                         <div class="flex space-x-1.5 opacity-60 group-hover:opacity-100 ease-out duration-300">
@@ -190,7 +193,7 @@
                                         </div>
                                         <pre class="h-full text-sm whitespace-pre group"><code class="h-full bg-black opacity-80 group-hover:opacity-100 group-hover:bg-white/5 language-html">&#x3C;header&#x3E;
     &#x3C;a href=&#x22;/&#x22;&#x3E;
-        &#x3C;img src=&#x22;logo.png&#x22; /&#x3E;
+        &#x3C;img src=&#x22;{logo}&#x22; /&#x3E;
     &#x3C;/a&#x3E;
     &#x3C;nav&#x3E;
         &#x3C;a href=&#x22;/&#x22;&#x3E;Link&#x3C;/a&#x3E;
@@ -211,14 +214,14 @@
 
             <div class="relative flex flex-col-reverse items-start w-1/2 p-px h-100 group rounded-2xl md:flex-row" style="background-image:linear-gradient(160deg,#e66735,#e335e2 50%,#73f7f8, #a729ed)">
                 <div class="absolute inset-0 w-full h-full duration-300 ease-out bg-black opacity-100 pointer-events-none group-hover:opacity-0 rounded-2xl"></div>
-                <div class="w-full h-full bg-black rounded-2xl">
+                <div id="content-section" class="w-full h-full bg-black rounded-2xl">
                     <div class="relative flex flex-col items-start w-full h-full overflow-hidden ring-1 ring-white/[15%] radial-background bg-gradient-to-br from-neutral-950 to-black rounded-2xl">
                         <div class="flex-auto p-12">
                             <p class="relative inline-block mb-2 text-xl font-semibold tracking-tight text-transparent opacity-90 group-hover:opacity-100">
                                 <span class="relative z-20 bg-clip-text bg-gradient-to-r from-neutral-400 via-neutral-100 to-neutral-500 group-hover:from-neutral-200 group-hover:via-neutral-100 group-hover:to-neutral-200">Create Content</span>
                             </p>
                             <div class="mb-6 space-y-4 text-sm leading-6 text-white/80 opacity-70 group-hover:opacity-100">
-                                <p>Add a Markdown file to the content folder and it will automatically create a page.</p>
+                                <p>Add a Markdown file to the <strong class="text-yellow-400">content</strong> folder and it will automatically create a page.</p>
                             </div>
                             <button hx-get="/docs/features/content" hx-target="#site-content" hx-select="#site-content" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" @click="document.getElementById('header').dispatchEvent(new CustomEvent('set-page-active', { detail: { active: 'docs' }})); document.getElementById('header').dispatchEvent(new CustomEvent('set-page-full-width', { detail: {}})); route=$el.getAttribute('hx-get')" class="relative inline-block w-full px-4 py-2 text-xs font-medium text-center text-white bg-transparent rounded-full opacity-70 group-hover:opacity-100 group ring-1 ring-white/20 md:w-auto">
                                 <span>Learn more</span>
@@ -226,7 +229,7 @@
                             </button>
                         </div>
                         <div class="relative pl-12">
-                            <div class="ring-1 ring-white/[15%] rounded-tl-lg opacity-80 group-hover:opacity-100">
+                            <div id="content-code-box" class="ring-1 translate-y-24 ring-white/[15%] rounded-tl-lg opacity-80 group-hover:opacity-100">
                                 <div class="flex items-center w-full h-10 pl-4 duration-300 ease-out bg-transparent border-b rounded-tl-lg group hover:bg-white/5 border-white/20 opacity-80">
                                     <div class="flex space-x-1.5 group-hover:opacity-100 ease-out duration-300">
                                         <div class="w-2.5 h-2.5 bg-red-400 rounded-full"></div>
@@ -246,14 +249,14 @@
 
             <div class="relative flex flex-col-reverse w-1/2 p-px h-100 group rounded-2xl md:flex-row" style="background-image:linear-gradient(160deg,#e66735,#e335e2 50%,#73f7f8, #a729ed)">
                 <div class="absolute inset-0 w-full h-full duration-300 ease-out bg-black opacity-100 pointer-events-none group-hover:opacity-0 rounded-2xl"></div>
-                <div class="w-full h-full bg-black rounded-2xl">
+                <div id="reload-section" class="w-full h-full bg-black rounded-2xl">
                     <div class="relative flex flex-col items-start w-full h-full overflow-hidden ring-1 ring-white/[15%] radial-background bg-gradient-to-br from-neutral-950 to-black rounded-2xl">
                         <div class="w-full p-12 pb-8">
                             <p class="relative inline-block mb-2 text-xl font-semibold tracking-tight text-transparent opacity-90 group-hover:opacity-100">
                                 <span class="relative z-20 bg-clip-text bg-gradient-to-r from-neutral-400 via-neutral-100 to-neutral-500 group-hover:from-neutral-200 group-hover:via-neutral-100 group-hover:to-neutral-200">Live Reloading</span>
                             </p>
                             <div class="space-y-4 text-sm leading-6 text-white/80 opacity-70 group-hover:opacity-100">
-                                <p>Update your code and see the result instantly with live-reloading.</p>
+                                <p>Update your code and see the results instantly with <strong class="text-yellow-400">live-reloading</strong>.</p>
                             </div>
                         </div>
                         <div class="w-full p-12 pt-0 pb-5">
@@ -267,7 +270,7 @@
                         </div>
 
                         <div class="relative flex items-end w-full h-full pl-8">
-                            <div class="relative ">
+                            <div id="reload-code-box" class="relative translate-y-24">
                                 <img src="/assets/images/live-reload.png" class="w-full pointer-events-none" />
                             </div>
                         </div>

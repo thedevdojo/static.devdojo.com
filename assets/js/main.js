@@ -2,6 +2,11 @@
 
 import Alpine from 'alpinejs'
 import morph from '@alpinejs/morph'
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+
+gsap.registerPlugin(ScrollTrigger);
  
 window.Alpine = Alpine
 Alpine.plugin(morph)
@@ -82,6 +87,154 @@ function loadGsapAnimations(){
             scrub: true
         });
     }
+
+    if(document.getElementById('include-code')){
+        gsap.to("#include-code", {
+            scrollTrigger: {
+                trigger: "#include-section",
+                start: "top bottom",
+                end: "bottom 80%",
+                scrub: true,
+                debug: true
+            },
+            y: 0,
+            opacity: 1,
+            scrub: true
+        });
+    }
+
+    if(document.getElementById('include-code')){
+        gsap.to("#include-code-box", {
+            scrollTrigger: {
+                trigger: "#include-section",
+                start: "top bottom",
+                end: "bottom 50%",
+                scrub: true
+            },
+            opacity: 1,
+            y: 0,
+            opacity: 1,
+            scrub: true
+        });
+    }
+
+    if(document.getElementById('tailwind-code-box')){
+        gsap.to("#tailwind-code-box", {
+            scrollTrigger: {
+                trigger: "#tailwind-section",
+                start: "top bottom",
+                end: "bottom 50%",
+                scrub: true,
+                debug: true
+            },
+            scale: 1,
+            y: 0,
+            scrub: true
+        });
+    }
+
+    if(document.getElementById('tailwind-code')){
+        gsap.to("#tailwind-code", {
+            scrollTrigger: {
+                trigger: "#tailwind-section",
+                start: "top bottom",
+                end: "bottom 50%",
+                scrub: true,
+                debug: true
+            },
+            opacity: 1,
+            scrub: true
+        });
+    }
+
+    if(document.getElementById('page-code-box')){
+        gsap.to("#page-code-box", {
+            scrollTrigger: {
+                trigger: "#page-section",
+                start: "top bottom",
+                end: "bottom 50%",
+                scrub: true,
+                debug: true
+            },
+            y: 0,
+            scrub: true
+        });
+    }
+
+    if(document.getElementById('layout-code-box-1')){
+        gsap.to("#layout-code-box-1", {
+            scrollTrigger: {
+                trigger: "#layout-section",
+                start: "top bottom",
+                end: "bottom 50%",
+                scrub: true
+            },
+            opacity: 1,
+            y: 0,
+            opacity: 1,
+            scrub: true
+        });
+    }
+
+    if(document.getElementById('layout-code-box-2')){
+        gsap.to("#layout-code-box-2", {
+            scrollTrigger: {
+                trigger: "#layout-section",
+                start: "top bottom",
+                end: "bottom 50%",
+                scrub: true
+            },
+            opacity: 1,
+            y: 0,
+            opacity: 1,
+            scrub: true
+        });
+    }
+
+    if(document.getElementById('layout-text')){
+        gsap.to("#layout-text", {
+            scrollTrigger: {
+                trigger: "#layout-section",
+                start: "top bottom",
+                end: "bottom 50%",
+                scrub: true
+            },
+            opacity: 1,
+            y: 0,
+            opacity: 1,
+            scrub: true
+        });
+    }
+
+    if(document.getElementById('content-code-box')){
+        gsap.to("#content-code-box", {
+            scrollTrigger: {
+                trigger: "#content-section",
+                start: "top bottom",
+                end: "bottom 50%",
+                scrub: true,
+                debug: true
+            },
+            scale: 1,
+            y: 0,
+            scrub: true
+        });
+    }
+
+    if(document.getElementById('reload-code-box')){
+        gsap.to("#reload-code-box", {
+            scrollTrigger: {
+                trigger: "#reload-section",
+                start: "top bottom",
+                end: "bottom 50%",
+                scrub: true,
+                debug: true
+            },
+            scale: 1,
+            y: 0,
+            scrub: true
+        });
+    }
 }
 
 function createRadialBackgrounds(){
@@ -137,7 +290,7 @@ document.addEventListener('htmx:afterSwap', function(evt) {
     setTimeout(function(){
         domReadyLoop();
         hljs.highlightAll();
+        loadGsapAnimations();
+        createRadialBackgrounds();
     }, 10);
-    loadGsapAnimations();
-    createRadialBackgrounds();
 });
