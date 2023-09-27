@@ -20,10 +20,12 @@ Static uses the [live-reload npm package](https://www.npmjs.com/package/liverelo
 
 ## Setup
 
-Live reload is automatically injected into the page when your run `static dev`, you'll see a script at the bottom of the page called livereload.js and this is the script that's responsible for reloading the page.
+Live reload is automatically injected into the page when your run `static dev`, you'll see a script at the bottom of the page called livereload.js and this is the script that's responsible for reloading the page. Your site will live-reload when any file is updated on your site.
 
 ## Configuration
 
-Right now there are no configuration options with live-reload, but we'll be adding some additional configurations in the future. Right now it works out of the box with all the files in your site; however, there may be some edge-cases where you want to create custom rules. Be sure to check back for updated configuration options or if you would like to contribute code, make sure to open a PR in the [Github Repo](https://github.com/thedevdojo/static).
+Right now there are no configuration options with live-reload, it just works out of the box. But, if necessary we may add some additional configurations in the future. Right now it works with all the files in your site; however, there may be some edge-cases where you want to create custom rules. Be sure to check back for updated configuration options or if you would like to contribute code, make sure to open a PR in the [Github Repo](https://github.com/thedevdojo/static).
 
 No more manually refreshing like a chump! Live-reload is here to help you save time and see your changes instantly 💪
+
+

@@ -6,49 +6,56 @@
         <div class="relative block w-full h-mini:hidden">
             <div class="w-full h-[42px] relative z-50 border-t-0 border-b-0  border-black/20 box-border font-bold flex items-center justify-center scale-110 translate-y-[140px] opacity-100 rotate-2" style="box-shadow: 0px 0px 5px rgba(248,225,100,0.5);">
                 <div class="relative w-full h-full overflow-hidden bg-yellow-300">
-                    <div class="flex items-center justify-between w-full h-full space-x-2 text-xs font-bold">
+                    <div class="flex items-center justify-between w-full h-full space-x-10 text-xs font-bold">
                         <!-- ToDo: <ForEach from="1" to="22">
                             <include src="home/black-lines.html"></include>
                         </ForEach> -->
-                        <include src="home/black-lines.html"></include>
-                        <include src="home/black-lines.html"></include>
-                        <include src="home/black-lines.html"></include>
-                        <include src="home/black-lines.html"></include>
-                        <include src="home/black-lines.html"></include>
-                        <include src="home/black-lines.html"></include>
-                        <include src="home/black-lines.html"></include>
-                        <include src="home/black-lines.html"></include>
-                        <include src="home/black-lines.html"></include>
-                        <include src="home/black-lines.html"></include>
-                        <include src="home/black-lines.html"></include>
-                        <include src="home/black-lines.html"></include>
-                        <include src="home/black-lines.html"></include>
-                        <include src="home/black-lines.html"></include>
-                        <include src="home/black-lines.html"></include>
-                        <include src="home/black-lines.html"></include>
-                        <include src="home/black-lines.html"></include>
-                        <include src="home/black-lines.html"></include>
-                        <include src="home/black-lines.html"></include>
-                        <include src="home/black-lines.html"></include>
-                        <include src="home/black-lines.html"></include>
-                        <include src="home/black-lines.html"></include>
+                        <div class="items-center justify-between hidden w-1/3 h-full space-x-2 xl:flex">
+                            <include src="home/black-lines.html"></include>
+                            <include src="home/black-lines.html"></include>
+                            <include src="home/black-lines.html"></include>
+                            <include src="home/black-lines.html"></include>
+                            <include src="home/black-lines.html"></include>
+                            <include src="home/black-lines.html"></include>
+                            <include src="home/black-lines.html"></include>
+                            <include src="home/black-lines.html"></include>
+                        </div>
+                        <div class="items-center justify-between hidden h-full space-x-2 md:flex md:w-1/2 xl:w-1/3">
+                            <include src="home/black-lines.html"></include>
+                            <include src="home/black-lines.html"></include>
+                            <include src="home/black-lines.html"></include>
+                            <include src="home/black-lines.html"></include>
+                            <include src="home/black-lines.html"></include>
+                            <include src="home/black-lines.html"></include>
+                            <include src="home/black-lines.html"></include>
+                            <include src="home/black-lines.html"></include>
+                        </div>
+                        <div class="flex items-center justify-between w-full h-full space-x-2 md:w-1/2 xl:w-1/3">
+                            <include src="home/black-lines.html"></include>
+                            <include src="home/black-lines.html"></include>
+                            <include src="home/black-lines.html"></include>
+                            <include src="home/black-lines.html"></include>
+                            <include src="home/black-lines.html"></include>
+                            <include src="home/black-lines.html"></include>
+                            <include src="home/black-lines.html"></include>
+                        </div>
                         <!-- Static HTML ⚡️ Static HTML  ⚡️ Static HTML  ⚡️ Static HTML  ⚡️ Static HTML  ⚡️ Static HTML  ⚡️ Static HTML ⚡️ Static HTML ⚡️ Static HTML ⚡️ Static HTML ⚡️ Static HTML -->
                     </div>
                 </div>
             </div>
             <div class="w-full relative z-50 font-bold scale-110 translate-y-[100px] bg-yellow-300 h-[42px] -rotate-3" style="box-shadow: 0px 0px 5px rgba(0,0,0,0.6);">
-                <div class="flex items-center justify-around w-screen h-10 uppercase animate-marquee whitespace-nowrap">
-                    <span class="mx-4 text-2xl">Let's make building websites easy and fun again.</span>
-                    <span class="flex-shrink-0 inline-block mx-4 text-2xl"><img class="inline w-12 h-12 -mt-1" src="https://i.giphy.com/4JtXt9i56Wp6U.gif"></span>
-                    <span class="mx-4 text-2xl">Let's make building websites easy and fun again</span>
-                    <span class="flex-shrink-0 inline-block w-16 mx-4 text-2xl"><img class="inline w-full h-auto -mt-1 -rotate-2" src="https://media4.giphy.com/media/12PXNbcHW8C9Bm/giphy.gif"></span>
+                <div class="flex items-center justify-around w-screen h-10 uppercase sm:justify-center xl:justify-around animate-marqueefaster sm:animate-marqueefast xl:animate-marquee whitespace-nowrap">
+                    <span class="text-lg sm:mx-5 sm:text-2xl xl:text-xl 2xl:text-2xl xl:mx-3 2xl:mx-4"><span class="hidden sm:inline">Let's </span>make <span class="hidden sm:inline">building</span> websites <span class="hidden sm:inline lg:hidden xl:inline"><span class="hidden lg:inline">easy and</span> fun again</span></span>
+                    <span class="flex-shrink-0 inline-block text-2xl xl:mx-4 sm:hidden lg:inline-block"><img class="inline w-10 h-10 -mt-1 sm:w-12 sm:h-12" src="https://i.giphy.com/4JtXt9i56Wp6U.gif"></span>
+                    <span class="inline-block text-lg sm:mx-5 sm:text-2xl xl:text-xl 2xl:text-2xl sm:hidden xl:mx-3 2xl:mx-4 lg:block"><span class="hidden xl:inline">Let's make building websites</span> <span class="hidden sm:inline">easy and</span> fun again</span>
+                    <span class="flex-shrink-0 inline-block w-12 text-2xl sm:mx-2 sm:w-16"><img class="inline w-full h-auto -mt-1 -rotate-2" src="https://media4.giphy.com/media/12PXNbcHW8C9Bm/giphy.gif"></span>
                 </div>
-                <div class="w-screen h-10 -translate-x-full -translate-y-full">
-                    <div class="flex items-center justify-around w-screen uppercase animate-marquee whitespace-nowrap">
-                        <span class="mx-4 text-2xl">Let's make building websites easy and fun again</span>
-                        <span class="flex-shrink-0 inline-block mx-4 text-2xl"><img class="inline w-12 h-12 -mt-1" src="https://i.giphy.com/4JtXt9i56Wp6U.gif"></span>
-                        <span class="mx-4 text-2xl">Let's make building websites easy and fun again</span>
-                        <span class="flex-shrink-0 inline-block w-16 mx-4 text-2xl"><img class="inline w-full h-auto -mt-0.5 -rotate-2" src="https://media4.giphy.com/media/12PXNbcHW8C9Bm/giphy.gif"></span>
+                <div class="w-screen h-10 -translate-x-full sm:mt-0 mt-0.5 -translate-y-full">
+                    <div class="flex items-center justify-around w-screen uppercase sm:justify-center xl:justify-around animate-marqueefaster sm:animate-marqueefast xl:animate-marquee whitespace-nowrap">
+                        <span class="text-lg sm:mx-5 sm:text-2xl xl:text-xl 2xl:text-2xl xl:mx-3 2xl:mx-4"><span class="hidden sm:inline">Let's </span>make <span class="hidden sm:inline">building</span> websites <span class="hidden sm:inline lg:hidden xl:inline"><span class="hidden lg:inline">easy and</span> fun again</span></span>
+                    <span class="flex-shrink-0 inline-block text-2xl xl:mx-4 sm:hidden lg:inline-block"><img class="inline w-10 h-10 -mt-1 sm:w-12 sm:h-12" src="https://i.giphy.com/4JtXt9i56Wp6U.gif"></span>
+                    <span class="inline-block text-lg sm:mx-5 sm:text-2xl xl:text-xl 2xl:text-2xl sm:hidden xl:mx-3 2xl:mx-4 lg:block"><span class="hidden xl:inline">Let's make building websites</span> <span class="hidden sm:inline">easy and</span> fun again</span>
+                    <span class="flex-shrink-0 inline-block w-12 text-2xl sm:mx-2 sm:w-16"><img class="inline w-full h-auto -mt-1 -rotate-2" src="https://media4.giphy.com/media/12PXNbcHW8C9Bm/giphy.gif"></span>
                     </div>
                 </div>
             </div>

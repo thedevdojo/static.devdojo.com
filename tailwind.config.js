@@ -6,6 +6,10 @@ module.exports = {
             animation: {
                 marquee: 'marquee 25s linear infinite',
                 marquee2: 'marquee2 25s linear infinite',
+                marqueefast: 'marquee 15s linear infinite',
+                marqueefast2: 'marquee2 15s linear infinite',
+                marqueefaster: 'marquee 10s linear infinite',
+                marqueefaster2: 'marquee2 10s linear infinite',
             },
             keyframes: {
                 marquee: {
