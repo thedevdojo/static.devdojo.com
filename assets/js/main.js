@@ -259,11 +259,13 @@ function createRadialBackgrounds(){
 }
 
 window.scrollTop = function(){
-    window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
+    setTimeout(function(){
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }, 20);
 }
 
 function domReadyLoop(){
