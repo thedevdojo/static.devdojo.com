@@ -28,7 +28,7 @@
         </div>
         <!-- End Dashed Lines -->
         
-        <div class="relative z-30 items-center w-full max-w-4xl pb-20 mx-auto">
+        <div class="relative z-30 items-center w-full max-w-4xl mx-auto md:pb-20">
             <div id="how-to-use-it-header" class="flex flex-col items-center justify-center mb-12">
                 <h2 class="font-book font-styling w-full font-display mb-5 md:mb-3 leading-none text-left md:text-center text-[3rem] lg:text-[3.5rem] pistol-font  tracking-tight md:leading-[120%] font-gradient">How do you use it?</h2>
                 <p class="sans text-left w-full md:text-center md:max-w-xl mx-auto opacity-60 text-[1.125rem] md:leading-[1.5] text-slate-11 font-normal">After you <button hx-get="/docs/install" hx-target="#site-content" hx-select="#site-content" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" @click="document.getElementById('header').dispatchEvent(new CustomEvent('set-page-active', { detail: { active: 'docs' }})); document.getElementById('header').dispatchEvent(new CustomEvent('set-page-full-width', { detail: {}})); route=$el.getAttribute('hx-get')" class="text-yellow-300 underline opacity-100">install the Static NPM package</button> you'll have three new commands that you can use in your command prompt.</p>
@@ -41,18 +41,18 @@
                 
                 <li class="relative pb-0 overflow-hidden rounded-t-2xl group">
                     <div class="overflow-hidden rounded-t-2xl backdrop-blur-2xl">
-                        <div class="relative flex flex-col items-center p-8 pb-0 shadow-2xl md:p-10 md:flex-row -0 rounded-t-2xl">
+                        <div class="relative flex flex-col items-center p-8 pb-0 shadow-2xl md:p-10 md:flex-row rounded-t-2xl">
                             
-                            <div class="flex flex-col items-start justify-start w-1/2 pr-10">
+                            <div class="flex flex-col items-start justify-start w-full md:w-1/2 md:pr-10">
                                 <div class="flex items-center space-x-1.5">
                                     <div class="relative top-0 left-0 -translate-x-0.5 flex items-center justify-center w-10 h-10 text-3xl bg-neutral-800 border rounded-full border-white/10 pistol-font">1.</div>
                                     <h3 class="text-2xl pistol-font lg:text-4xl"><span class="text-green-400">Static</span> <span class="text-pink-400">New</span></h3>
                                 </div>
-                                <p class="mt-2 text-lg text-white/80">The <span class="text-base font-bold text-white">static new</span></span> command will create<br> a new site in the folder you specify.</p>
+                                <p class="mt-2 text-lg text-white/80">The <span class="text-base font-bold text-white">static new</span></span> command will create<br class="hidden md:block"> a new site in the folder you specify.</p>
                                 <p class="text-[0.6rem] text-white/60 mt-3 lg:block hidden">This command will setup a new site and boot it up on a dev server</p>
                                 
                             </div>
-                            <div class="relative w-1/2 overflow-hidden border rounded-lg border-white/20">
+                            <div class="relative w-full mt-6 mb-10 overflow-hidden border rounded-lg md:my-0 md:w-1/2 border-white/20">
                                 <div class="relative flex items-center w-full h-10 pl-4 duration-300 ease-out bg-transparent border-b group hover:bg-white/5 border-white/20 opacity-80">
                                     <div class="flex space-x-1.5 opacity-60 group-hover:opacity-100 ease-out duration-300">
                                         <div class="w-2.5 h-2.5 bg-red-400 rounded-full"></div>
@@ -88,11 +88,9 @@
                 </li>
                 <li class="relative overflow-hidden group">
                     <div class="overflow-hidden backdrop-blur-2xl">
-                        <div class="relative flex items-center p-4 pb-0 border-0 shadow-2xl lg:p-10 lg:py-12">
-                            <div class="absolute top-0 right-0 w-full h-px -translate-y-px opacity-100 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
-                            <div class="absolute bottom-0 left-0 w-full h-px translate-y-px opacity-100 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+                        <div class="relative flex flex-col items-center p-8 pb-0 shadow-2xl md:p-10 md:flex-row rounded-t-2xl">
                             
-                            <div class="flex flex-col items-start justify-start w-1/2 pr-10">
+                            <div class="flex flex-col items-start justify-start w-full md:w-1/2 md:pr-10">
                                 <div class="flex items-center space-x-1.5">
                                     <div class="relative top-0 left-0 -translate-x-0.5 flex items-center justify-center w-10 h-10 text-3xl bg-neutral-800 border rounded-full border-white/10 pistol-font">2.</div>
                                     <h3 class="text-2xl pistol-font lg:text-4xl"><span class="text-green-400">Static</span> <span class="text-pink-400">Dev</span></h3>
@@ -101,7 +99,7 @@
                                 
                                 
                             </div>
-                            <div class="relative w-1/2 overflow-hidden border rounded-lg border-white/20">
+                            <div class="relative w-full mt-6 mb-10 overflow-hidden border rounded-lg md:my-0 md:w-1/2 border-white/20">
                                 <div class="relative flex items-center w-full h-10 pl-4 duration-300 ease-out bg-transparent border-b group hover:bg-white/5 border-white/20 opacity-80">
                                     <div class="flex space-x-1.5 opacity-60 group-hover:opacity-100 ease-out duration-300">
                                         <div class="w-2.5 h-2.5 bg-red-400 rounded-full"></div>
@@ -133,11 +131,9 @@
                 </li>
                 <li class="relative overflow-hidden group rounded-b-2xl">
                     <div class="overflow-hidden rounded-b-2xl backdrop-blur-2xl">
-                        <div class="relative flex items-center p-4 pb-0 border-0 shadow-2xl rounded-b-2xl lg:p-10 lg:py-12">
-                            <div class="absolute top-0 right-0 w-full h-px -translate-y-px opacity-100 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
-                            <div class="absolute bottom-0 left-0 w-full h-px translate-y-px opacity-100 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+                        <div class="relative flex flex-col items-center p-8 pb-0 shadow-2xl md:p-10 md:flex-row rounded-t-2xl">
                             
-                            <div class="flex flex-col items-start justify-start w-1/2 pr-10">
+                            <div class="flex flex-col items-start justify-start w-full md:w-1/2 md:pr-10">
                                 <div class="flex items-center space-x-1.5">
                                     <div class="relative top-0 left-0 -translate-x-0.5 flex items-center justify-center w-10 h-10 text-3xl bg-neutral-800 border rounded-full border-white/10 pistol-font">3.</div>
                                     <h3 class="text-2xl pistol-font lg:text-4xl"><span class="text-green-400">Static</span> <span class="text-pink-400">Build</span></h3>
@@ -146,7 +142,7 @@
                                 
                                 
                             </div>
-                            <div class="relative w-1/2 overflow-hidden border rounded-lg border-white/20">
+                            <div class="relative w-full mt-6 mb-10 overflow-hidden border rounded-lg md:my-0 md:w-1/2 border-white/20">
                                 <div class="relative flex items-center w-full h-10 pl-4 duration-300 ease-out bg-transparent border-b group hover:bg-white/5 border-white/20 opacity-80">
                                     <div class="flex space-x-1.5 opacity-60 group-hover:opacity-100 ease-out duration-300">
                                         <div class="w-2.5 h-2.5 bg-red-400 rounded-full"></div>

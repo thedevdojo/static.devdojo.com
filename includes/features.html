@@ -282,7 +282,7 @@
 
         </section>
 
-        <div class="flex items-center justify-center max-w-4xl py-20 mx-auto">
+        <div class="flex items-center justify-start max-w-4xl py-10 mx-auto md:py-20 md:justify-center">
             <button hx-get="/docs/getting-started" hx-target="#site-content" hx-select="#site-content" hx-ext="alpine-morph" hx-swap="morph" hx-push-url="true" @click="document.getElementById('header').dispatchEvent(new CustomEvent('set-page-active', { detail: { active: 'docs' }})); document.getElementById('header').dispatchEvent(new CustomEvent('set-page-full-width', { detail: {}})); route=$el.getAttribute('hx-get')" data-docs class="relative inline-block px-4 py-2 text-xs font-medium text-center text-white bg-transparent rounded-full opacity-70 group-hover:opacity-100 group ring-1 ring-white/20">
                 <span>View the docs to view all features</span>
                 <span class="text-[#e66735] group-hover:translate-x-1 inline-block ml-0.5 ease-out duration-300">&rarr;</span>
