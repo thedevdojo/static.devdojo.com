@@ -63,7 +63,7 @@ http://localhost:3000<span class="text-green-400">/contact/form</span>
     </a>
 </div>
 
-### 2. Layouts
+### Layouts
 
 Design **layouts** that multiple pages can utilize.
 

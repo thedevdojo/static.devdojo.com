@@ -7,10 +7,10 @@ prevTitle: 'Includes'
 prevURL: '/docs/features/includes' 
 ---
 
-<div class="flex items-start px-5 py-5 my-6 mt-1 leading-[18px] bg-neutral-950 border border-yellow-400 rounded-md">
-   <img class="w-auto h-20 my-0 mr-5" src="/assets/images/icons/collections.png" />
+<div class="flex items-start px-5 py-5 my-6 mt-1 md:translate-y-0 translate-y-5 leading-[18px] bg-neutral-950 border border-yellow-400 rounded-md">
+   <img class="w-auto h-12 my-0 mr-5 md:h-20" src="/assets/images/icons/collections.png" />
    <div>
-      <h1 class="mb-0">Collections</h1>
+      <h1 class="mb-0 text-base md:text-3xl">Collections</h1>
       <p class="my-1">Collections allow you to add and manage sets of data in your application. They provide a convenient way to organize and loop through data.</p>
    </div>
 </div>

@@ -17,6 +17,7 @@ domReadyLoop();
 document.addEventListener("DOMContentLoaded", function() {
     loadGsapAnimations();
     createRadialBackgrounds();
+    updateTOC();
 });
 
 function loadGsapAnimations(){
@@ -292,5 +293,89 @@ document.addEventListener('htmx:afterSwap', function(evt) {
         hljs.highlightAll();
         loadGsapAnimations();
         createRadialBackgrounds();
+        
     }, 10);
 });
+
+document.addEventListener('htmx:afterSettle', function(evt) {
+    setTimeout(function(){
+        updateTOC();
+    }, 10);
+});
+
+function updateTOC(){
+    if(document.getElementById('table-of-contents')){
+        window.dispatchEvent(new CustomEvent('set-toc', { detail: { toc: window.toc } }));
+    }    
+}
+
+window.renderTocFunctionality = function(){
+    const tocALinks = document.querySelectorAll('.toc li a');
+    console.log(tocALinks);
+
+    tocALinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
+            const offset = 99; // Adjust the offset value as per your requirement
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                window.scrollTo({
+                    top: targetPosition - offset,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Get all the <a> elements inside the table of contents
+    const tocLinks = document.querySelectorAll('.toc li');
+
+    // Add an event listener to the window scroll event
+    window.addEventListener('scroll', () => {
+        // Get the current scroll position
+        const scrollPosition = window.scrollY;
+
+        // Loop through each table of contents link
+        tocLinks.forEach(link => {
+            // Get the target element ID from the link's href attribute
+            const targetId = link.firstElementChild.getAttribute('href').substring(1);
+
+            // Get the target element by ID
+            const targetElement = document.getElementById(targetId);
+
+            
+
+            // Check if the target element exists and is in the viewport
+            if (targetElement && isElementAtTopAndNotReachedNextSection(targetElement)) {
+                if(!link.classList.contains('active')){
+                    // Add the 'active' class to the link
+                    link.classList.add('active');
+                    setAllOthersToInactive(link);
+                }
+            }
+        });
+    });
+}
+
+// Helper function to check if an element is in the viewport
+function isElementAtTopAndNotReachedNextSection(element) {
+    const rect = element.getBoundingClientRect();
+    const nextSection = document.querySelector('section + section');
+
+    return (
+        rect.top <= 100 &&
+        (!nextSection || rect.bottom < (nextSection.offsetTop +100))
+    );
+}
+
+function setAllOthersToInactive(link){
+    const tocLinks = document.querySelectorAll('.toc li');
+    for(let i = 0; i < tocLinks.length; i++){
+        if(tocLinks[i] != link){
+            tocLinks[i].classList.remove('active');
+        }
+    }
+}

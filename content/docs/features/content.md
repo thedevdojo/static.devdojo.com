@@ -7,10 +7,10 @@ prevTitle: 'Collections'
 prevURL: '/docs/features/collections'
 ---
 
-<div class="flex items-start px-5 py-5 my-6 mt-1 leading-[18px] bg-neutral-950 border border-yellow-400 rounded-md">
-   <img class="w-auto h-20 my-0 mr-5" src="/assets/images/icons/content.png" />
+<div class="flex items-start px-5 py-5 my-6 mt-1 md:translate-y-0 translate-y-5 leading-[18px] bg-neutral-950 border border-yellow-400 rounded-md">
+   <img class="w-auto h-12 my-0 mr-5 md:h-20" src="/assets/images/icons/content.png" />
    <div>
-      <h1 class="mb-0">Content</h1>
+      <h1 class="mb-0 text-base md:text-3xl">Content</h1>
       <p class="my-1">Learn how to create and manage content for your Static website using Markdown files and content pages.</p>
    </div>
 </div>

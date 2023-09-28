@@ -7,10 +7,10 @@ prevTitle: 'Live Reloading'
 prevURL: '/docs/features/live-reloading' 
 ---
 
-<div class="flex items-start px-5 py-5 my-6 mt-1 leading-[18px] bg-neutral-950 border border-yellow-400 rounded-md">
-   <img class="w-auto h-20 my-0 mr-5" src="/assets/images/icons/tailwindcss.png" />
+<div class="flex items-start px-5 py-5 my-6 mt-1 md:translate-y-0 translate-y-5 leading-[18px] bg-neutral-950 border border-yellow-400 rounded-md">
+   <img class="w-auto h-12 my-0 mr-5 md:h-20" src="/assets/images/icons/tailwindcss.png" />
    <div>
-      <h1 class="mb-0">TailwindCSS</h1>
+      <h1 class="mb-0 text-base md:text-3xl">TailwindCSS</h1>
       <p class="my-1">Easily use TailwindCSS in your sites by including a simple short code. Learn more about how everything works below.</p>
    </div>
 </div>
@@ -52,7 +52,7 @@ When you use the `static dev` command, the Tailwind CSS CDN will be injected int
 
 It might be beneficial to understand how it works, and it's pretty simple to explain.
 
-### When Running <code>static dev</code>
+### When Running `static dev`
 
 When you run the `static dev` command, the Tailwind CSS CDN will be injected into the head of your documentation. This also includes all the TailwindCSS Plug-ins.
 
@@ -60,7 +60,7 @@ This will make it easy to test out new colors and styles. You can open up develo
 
 Of course, using the Tailwind CDN in production is not recommended, so that's why we handle it differently when you build your site.
 
-### When Running <code>static build</code>
+### When Running `static build`
 
 When you run the `static build` command we use the Tailwind CLI to search your site for all Tailwind CSS classes that are used. It will then add a minified version of all these classes to your `assets/css/main.css` file. Now, your website should be smokin 🔥 fast!
 

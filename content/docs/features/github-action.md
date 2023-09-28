@@ -8,10 +8,10 @@ prevURL: '/docs/features/tailwindcss'
 ---
 
 
-<div class="flex items-start px-5 py-5 my-6 mt-1 leading-[18px] bg-neutral-950 border border-yellow-400 rounded-md">
-   <img class="w-auto h-20 my-0 mr-5" src="/assets/images/icons/action.png" />
+<div class="flex items-start px-5 py-5 my-6 mt-1 md:translate-y-0 translate-y-5 leading-[18px] bg-neutral-950 border border-yellow-400 rounded-md">
+   <img class="w-auto h-12 my-0 mr-5 md:h-20" src="/assets/images/icons/action.png" />
    <div>
-      <h1 class="mb-0">Github Action</h1>
+      <h1 class="mb-0 text-base md:text-3xl">Github Action</h1>
       <p class="my-1">Use our github action to deploy your website easily to Github pages. Git push and your changes will automatically be deployed</p>
    </div>
 </div>
