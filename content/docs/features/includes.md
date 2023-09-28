@@ -7,8 +7,8 @@ prevTitle: 'Layouts'
 prevURL: '/docs/features/layouts' 
 ---
 
-<div class="flex items-start px-5 py-5 my-6 mt-1 md:translate-y-0 translate-y-5 leading-[18px] bg-neutral-950 border border-yellow-400 rounded-md">
-   <img class="w-auto h-12 my-0 mr-5 md:h-20" src="/assets/images/icons/includes.png" />
+<div class="flex items-start px-5 py-5 mb-12 md:mb-5 mt-1 md:translate-y-0 translate-y-5 leading-[18px] bg-neutral-950 border border-yellow-400 rounded-md">
+   <img class="w-auto h-12 my-0 mr-5 md:h-20 md:block hidden" src="/assets/images/icons/includes.png" />
    <div>
       <h1 class="mb-0 text-base md:text-3xl">Includes</h1>
       <p class="my-1">Includes allow you to create reusable HTML code snippets and include them in multiple pages of your website.</p>

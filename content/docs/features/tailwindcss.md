@@ -7,8 +7,8 @@ prevTitle: 'Live Reloading'
 prevURL: '/docs/features/live-reloading' 
 ---
 
-<div class="flex items-start px-5 py-5 my-6 mt-1 md:translate-y-0 translate-y-5 leading-[18px] bg-neutral-950 border border-yellow-400 rounded-md">
-   <img class="w-auto h-12 my-0 mr-5 md:h-20" src="/assets/images/icons/tailwindcss.png" />
+<div class="flex items-start px-5 py-5 mb-12 md:mb-5 mt-1 md:translate-y-0 translate-y-5 leading-[18px] bg-neutral-950 border border-yellow-400 rounded-md">
+   <img class="w-auto h-12 my-0 mr-5 md:h-20 md:block hidden" src="/assets/images/icons/tailwindcss.png" />
    <div>
       <h1 class="mb-0 text-base md:text-3xl">TailwindCSS</h1>
       <p class="my-1">Easily use TailwindCSS in your sites by including a simple short code. Learn more about how everything works below.</p>

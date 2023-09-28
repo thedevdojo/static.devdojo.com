@@ -7,8 +7,8 @@ prevTitle: 'Installation'
 prevURL: '/docs/install'
 ---
 
-<div class="flex items-start px-5 py-5 my-6 mt-1 md:translate-y-0 translate-y-5 leading-[18px] bg-neutral-950 border border-yellow-400 rounded-md">
-   <img class="w-auto h-12 my-0 mr-5 md:h-20" src="/assets/images/icons/folder-structure.png" />
+<div class="flex items-start px-5 py-5 mb-12 md:mb-5 mt-1 md:translate-y-0 translate-y-5 leading-[18px] bg-neutral-950 border border-yellow-400 rounded-md">
+   <img class="hidden w-auto h-12 my-0 mr-5 md:block md:h-20" src="/assets/images/icons/folder-structure.png" />
    <div>
       <h1 class="mb-0 text-base md:text-3xl">Folder Structure</h1>
       <p class="my-1">In this section we'll cover the basic folder structure of a Static website. This will help you learn how to organize files or folders appropriately for your project.</p>
