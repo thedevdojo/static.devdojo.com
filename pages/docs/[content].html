@@ -14,7 +14,7 @@
 
         <div 
             :class="{ 'translate-x-0  bg-black/90 border-r border-neutral-800/20 md:bg-transparent': leftSidebar, 'md:-translate-x-0 border-transparent -translate-x-full': !leftSidebar }"
-            class="fixed  md:sticky flex-shrink-0 z-50 md:left-auto left-0 top-[80px] md:transition-none ease-out duration-300 md:top-[50px] md:mt-[50px] text-white md:-ml-0.5 h-full w-64  xl:w-72  ">
+            class="fixed  md:sticky flex-shrink-0 z-50 md:left-auto left-0 top-[80px] md:transition-none ease-out duration-300 md:top-[50px] md:mt-[50px] text-white md:-ml-0.5 h-full w-64  xl:w-72" x-cloak>
             
             <div @click="leftSidebar=!leftSidebar"
             :class="{ 'border-neutral-800/40': leftSidebar, 'border-neutral-800/60': !leftSidebar }"
