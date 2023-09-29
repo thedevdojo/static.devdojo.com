@@ -142,7 +142,9 @@
     </div>
     
 
-    <div x-data="{ route: '/' }" x-init="route=window.location.pathname" id="site">
+    <div x-data="{ route: '/' }" 
+        x-init="route=window.location.pathname" 
+        @set-route.window="route=event.detail.route" id="site">
       <include src="header.html"></include>
       <div id="site-content">
         {slot}

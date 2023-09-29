@@ -298,7 +298,7 @@ document.addEventListener('htmx:afterSwap', function(evt) {
         hljs.highlightAll();
         loadGsapAnimations();
         createRadialBackgrounds();
-        
+        window.dispatchEvent(new CustomEvent('set-route', { detail: { route: evt.detail.pathInfo.requestPath } }));
     }, 10);
 });
 
@@ -310,6 +310,7 @@ document.addEventListener('htmx:afterSwap', function(evt) {
 
 window.addEventListener('static:content', function(evt) {
     console.log('entered');
+    alert('got');
     console.log(JSON.parse(evt.detail.toc));
     window.dispatchEvent(new CustomEvent('set-toc', { detail: { toc: JSON.parse(evt.detail.toc) } }));
 })
