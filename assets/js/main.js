@@ -299,11 +299,17 @@ document.addEventListener('htmx:afterSwap', function(evt) {
     }, 10);
 });
 
-document.addEventListener('htmx:afterSettle', function(evt) {
-    setTimeout(function(){
-        updateTOC();
-    }, 10);
-});
+// document.addEventListener('htmx:afterSettle', function(evt) {
+//     setTimeout(function(){
+//         updateTOC();
+//     }, 10);
+// });
+
+window.addEventListener('static:content', function(evt) {
+    console.log('entered');
+    console.log(JSON.parse(evt.detail.toc));
+    window.dispatchEvent(new CustomEvent('set-toc', { detail: { toc: JSON.parse(evt.detail.toc) } }));
+})
 
 function updateTOC(){
     if(document.getElementById('table-of-contents')){
@@ -313,7 +319,6 @@ function updateTOC(){
 
 window.renderTocFunctionality = function(){
     const tocALinks = document.querySelectorAll('.toc li a');
-    console.log(tocALinks);
 
     tocALinks.forEach(link => {
         link.addEventListener('click', (event) => {
