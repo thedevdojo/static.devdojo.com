@@ -153,5 +153,13 @@
     </div>
 
     <script src="{ url('/assets/js/main.js') }"></script>
+    <script>
+      window.addEventListener('static:content', function(evt) {
+    console.log('entered');
+    alert('got');
+    console.log(JSON.parse(evt.detail.toc));
+    window.dispatchEvent(new CustomEvent('set-toc', { detail: { toc: JSON.parse(evt.detail.toc) } }));
+});
+    </script>
 </body>
 </html>

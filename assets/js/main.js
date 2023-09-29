@@ -21,12 +21,6 @@ document.addEventListener("DOMContentLoaded", function() {
     loadGsapAnimations();
     createRadialBackgrounds();
     updateTOC();
-    window.addEventListener('static:content', function(evt) {
-        console.log('entered');
-        alert('got');
-        console.log(JSON.parse(evt.detail.toc));
-        window.dispatchEvent(new CustomEvent('set-toc', { detail: { toc: JSON.parse(evt.detail.toc) } }));
-    });
 });
 
 function loadGsapAnimations(){
@@ -39,8 +33,7 @@ function loadGsapAnimations(){
                 end: "top 10%",
                 scrub: true
             },
-            opacity: 0,
-            scrub: true
+            opacity: 0
         });
         gsap.fromTo("#hero-main img.bounce-image", {
             scale: 0.8
@@ -65,8 +58,7 @@ function loadGsapAnimations(){
                 scrub: true,
             },
             y: -150,
-            opacity: 1,
-            scrub: true
+            opacity: 1
         });
     }
 
@@ -79,8 +71,7 @@ function loadGsapAnimations(){
                 scrub: true
             },
             x: -50,
-            opacity: 1,
-            scrub: true
+            opacity: 1
         });
     }
 
@@ -93,8 +84,7 @@ function loadGsapAnimations(){
                 scrub: true
             },
             y: -150,
-            opacity: 1,
-            scrub: true
+            opacity: 1
         });
     }
 
@@ -108,8 +98,7 @@ function loadGsapAnimations(){
                 debug: true
             },
             y: 0,
-            opacity: 1,
-            scrub: true
+            opacity: 1
         });
     }
 
@@ -123,8 +112,7 @@ function loadGsapAnimations(){
             },
             opacity: 1,
             y: 0,
-            opacity: 1,
-            scrub: true
+            opacity: 1
         });
     }
 
@@ -138,8 +126,7 @@ function loadGsapAnimations(){
                 debug: true
             },
             scale: 1,
-            y: 0,
-            scrub: true
+            y: 0
         });
     }
 
@@ -152,8 +139,7 @@ function loadGsapAnimations(){
                 scrub: true,
                 debug: true
             },
-            opacity: 1,
-            scrub: true
+            opacity: 1
         });
     }
 
@@ -166,8 +152,7 @@ function loadGsapAnimations(){
                 scrub: true,
                 debug: true
             },
-            y: 0,
-            scrub: true
+            y: 0
         });
     }
 
@@ -181,8 +166,7 @@ function loadGsapAnimations(){
             },
             opacity: 1,
             y: 0,
-            opacity: 1,
-            scrub: true
+            opacity: 1
         });
     }
 
@@ -196,8 +180,7 @@ function loadGsapAnimations(){
             },
             opacity: 1,
             y: 0,
-            opacity: 1,
-            scrub: true
+            opacity: 1
         });
     }
 
@@ -211,8 +194,7 @@ function loadGsapAnimations(){
             },
             opacity: 1,
             y: 0,
-            opacity: 1,
-            scrub: true
+            opacity: 1
         });
     }
 
@@ -226,8 +208,7 @@ function loadGsapAnimations(){
                 debug: true
             },
             scale: 1,
-            y: 0,
-            scrub: true
+            y: 0
         });
     }
 
@@ -241,8 +222,7 @@ function loadGsapAnimations(){
                 debug: true
             },
             scale: 1,
-            y: 0,
-            scrub: true
+            y: 0
         });
     }
 }
