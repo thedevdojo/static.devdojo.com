@@ -1,14 +1,6 @@
 <layout title="{frontmatter.title}" src="main.html">
    
-    <div x-data="{ leftSidebar: false }" 
-        x-init="
-            $watch('leftSidebar', function(value){
-                if(value){
-                    window.dispatchEvent(new CustomEvent('close-mobile-menu', {}));
-                }
-            })
-        "
-        @close-left-sidebar.window="leftSidebar = false" class="flex items-start px-6 mx-auto md:px-4 max-w-7xl docs">
+    <div  class="flex items-start px-6 mx-auto md:px-4 max-w-7xl docs">
 
         
 
@@ -30,7 +22,7 @@
         <div x-show="leftSidebar" @click="leftSidebar=false" class="fixed inset-0 z-20 w-screen h-screen bg-black bg-opacity-[95%]"></div>
 
         <div id="docs-content" class="flex items-start pb-10">
-            [static_js]
+            {static_content_element}
             <div class="max-w-4xl pt-24 mx-auto mt-3 mr-0 md:pr-5 lg:mr-64 lg:pr-0">
 
                 <include src="docs/home-header.html"></include>

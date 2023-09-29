@@ -142,7 +142,15 @@
     </div>
     
 
-    <div x-data="{ route: '/' }" 
+    <div x-data="{ route: '/', leftSidebar: false }"
+        x-init="
+            $watch('leftSidebar', function(value){
+                if(value){
+                    window.dispatchEvent(new CustomEvent('close-mobile-menu', {}));
+                }
+            })
+        "
+        @close-left-sidebar.window="leftSidebar = false"
         x-init="route=window.location.pathname" 
         @set-route.window="route=event.detail.route" id="site">
       <include src="header.html"></include>

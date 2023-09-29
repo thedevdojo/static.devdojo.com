@@ -292,7 +292,7 @@ document.addEventListener('htmx:afterSwap', function(evt) {
 document.addEventListener('htmx:afterSettle', function(evt) {
     setTimeout(function(){
         updateTOC();
-    }, 500);
+    }, 10);
 });
 
 
