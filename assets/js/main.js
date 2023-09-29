@@ -285,20 +285,23 @@ document.addEventListener('htmx:afterSwap', function(evt) {
         loadGsapAnimations();
         createRadialBackgrounds();
         window.dispatchEvent(new CustomEvent('set-route', { detail: { route: evt.detail.pathInfo.requestPath } }));
+//        updateTOC();
     }, 10);
 });
 
-// document.addEventListener('htmx:afterSettle', function(evt) {
-//     setTimeout(function(){
-//         updateTOC();
-//     }, 10);
-// });
+document.addEventListener('htmx:afterSettle', function(evt) {
+    setTimeout(function(){
+        updateTOC();
+    }, 500);
+});
 
 
 
 function updateTOC(){
     if(document.getElementById('table-of-contents')){
-        window.dispatchEvent(new CustomEvent('set-toc', { detail: { toc: JSON.parse(localStorage.getItem('toc')) } }));
+        setTimeout(function(){
+            window.dispatchEvent(new CustomEvent('set-toc', { detail: { toc: window.toc } }));
+        });
     }    
 }
 
