@@ -300,7 +300,8 @@ document.addEventListener('htmx:afterSettle', function(evt) {
 function updateTOC(){
     if(document.getElementById('table-of-contents')){
         setTimeout(function(){
-            window.dispatchEvent(new CustomEvent('set-toc', { detail: { toc: window.toc } }));
+            console.log('setting...');
+            window.dispatchEvent(new CustomEvent('set-toc', { detail: { toc: JSON.parse(document.getElementById('static-content').dataset.toc) } }));
         });
     }    
 }
