@@ -21,6 +21,12 @@ document.addEventListener("DOMContentLoaded", function() {
     loadGsapAnimations();
     createRadialBackgrounds();
     updateTOC();
+    window.addEventListener('static:content', function(evt) {
+        console.log('entered');
+        alert('got');
+        console.log(JSON.parse(evt.detail.toc));
+        window.dispatchEvent(new CustomEvent('set-toc', { detail: { toc: JSON.parse(evt.detail.toc) } }));
+    });
 });
 
 function loadGsapAnimations(){
@@ -308,12 +314,7 @@ document.addEventListener('htmx:afterSwap', function(evt) {
 //     }, 10);
 // });
 
-window.addEventListener('static:content', function(evt) {
-    console.log('entered');
-    alert('got');
-    console.log(JSON.parse(evt.detail.toc));
-    window.dispatchEvent(new CustomEvent('set-toc', { detail: { toc: JSON.parse(evt.detail.toc) } }));
-})
+
 
 function updateTOC(){
     if(document.getElementById('table-of-contents')){
