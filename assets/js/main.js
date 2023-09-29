@@ -302,12 +302,12 @@ document.addEventListener('htmx:afterSwap', function(evt) {
 document.addEventListener('htmx:afterSettle', function(evt) {
     setTimeout(function(){
         updateTOC();
-    }, 500);
+    }, 10);
 });
 
 function updateTOC(){
     if(document.getElementById('table-of-contents')){
-        window.dispatchEvent(new CustomEvent('set-toc', { detail: { toc: window.toc } }));
+        window.dispatchEvent(new CustomEvent('set-toc', { detail: { toc: JSON.parse(localStorage.getItem('toc')) } }));
     }    
 }
 
