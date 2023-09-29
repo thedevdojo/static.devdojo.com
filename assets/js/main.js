@@ -2,14 +2,17 @@
 
 import Alpine from 'alpinejs'
 import morph from '@alpinejs/morph'
+import focus from '@alpinejs/focus'
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+ 
 
 
 gsap.registerPlugin(ScrollTrigger);
  
 window.Alpine = Alpine
 Alpine.plugin(morph)
+Alpine.plugin(focus)
 
 Alpine.start()
 domReadyLoop();
