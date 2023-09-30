@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
     loadGsapAnimations();
     createRadialBackgrounds();
     updateTOC();
+    window.dispatchEvent(new CustomEvent('set-route', { detail: { route: window.location.pathname } }));
 });
 
 function loadGsapAnimations(){

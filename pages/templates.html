@@ -1,18 +1,6 @@
 <layout title="Static Starter Template" src="main.html">
 
-    <div x-data="{
-        templates: [],
-        activeTemplate: null,
-        setActiveTemplate: function(template_slug){
-            for(let i =0; i<this.templates.length; i++){
-                if(this.templates[i].slug == template_slug){
-                    this.activeTemplate = this.templates[i];
-                }
-            }
-        }
-    }"
-    @change-template.window="setActiveTemplate(event.detail.slug)"
-    class="max-w-6xl px-6 pt-12 pb-20 mx-auto xl:px-0">
+    <div x-data class="max-w-6xl px-6 pt-12 pb-20 mx-auto xl:px-0">
 
         <div class="flex flex-col py-12 text-center text-white lg:py-16">
             <h2 class="font-book font-styling w-full font-display mb-2 leading-none text-left md:text-center text-[3rem] lg:text-[3.5rem] pistol-font  tracking-tight md:leading-[120%] font-gradient">Templates</h2>
@@ -22,8 +10,7 @@
         <div class="grid items-center justify-center w-full h-auto grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 md:gap-10">
 
             <ForEach collection="templates" as="template">
-                <div x-data @click="window.dispatchEvent(new CustomEvent('show-template-preview', { detail : { url: '{template.url}' }})); setActiveTemplate('{template.slug}')"
-                    x-init="templates.push({ name: '{template.name}', cover: '{template.cover}', favicon: '{template.favicon}', description: '{template.description}', slug: '{template.slug}', url: '{template.url}', repo: '{template.repo}' })" 
+                <div x-data @click="window.dispatchEvent(new CustomEvent('show-template-preview', { detail : { url: '{template.url}' }})); window.dispatchEvent(new CustomEvent('set-active-template', { detail: { slug: '{template.slug}' }}));"
                     class="flex w-full overflow-hidden transition-all duration-75 ease-out border rounded-md cursor-pointer border-neutral-700 sm:rounded-xl sm:shadow-lg group opacity-95 hover:opacity-100">
                     <div class="flex flex-col">
                         <div class="relative overflow-hidden">

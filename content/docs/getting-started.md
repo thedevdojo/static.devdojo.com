@@ -17,13 +17,13 @@ home: true
 - HTML is **easy**. 
 - Yet, somehow we lost the art of **crafting simple** HTML websites
 
-Static is going to help you rediscover the joy and excitement of building HTML websites.
+Static is going to help you rediscover your joy and excitement for building HTML websites.
 
 ## Why Static
 
-Most <strong>Static Site Generators</strong> (SSG's) **are overkill** and packed with unnecessary complexities. This might push people to their breaking point, giving them a strong desire to set fire to the office 🔥
+Most <strong>Static Site Generators</strong> (SSG's) **are overkill** and packed with unnecessary complexities. These complexities have frequently led to frustration, anger, and a strong desire to set fire to the office 🔥
 
-<div class="flex items-center px-4 py-4 my-6 leading-[18px] bg-blue-600 border-l-4 border-blue-800 rounded-md">
+<div class="flex items-center px-4 py-4 my-6 leading-[24px] bg-blue-600 border-l-4 border-blue-800 rounded-md">
 <img class="w-auto h-8 mr-3.5 my-0" src="/assets/images/icons/info.png" />
 <span>This is where Static comes into play. Static is here to make things simple, bring you joy, and help you regain control over any desire to start fires.</span>
 </div>
@@ -32,8 +32,6 @@ Most <strong>Static Site Generators</strong> (SSG's) **are overkill** and packed
 Generating static websites can be simple and enjoyable again without the need for bloated frameworks and complicated configs. Check out a few of the key features below.
 
 ## Key Features
-
-Here are a few key features that will help you get aquainted with Static.
 
 ### Page-Based Routing
 

@@ -2,14 +2,14 @@
 title: Github Action
 description: Auto-deploy your website using the Static Github action
 nextTitle: 'Deploying Your Site'
-nextURL: '/docs/features/deploy'
+nextURL: '/docs/guides/deploy'
 prevTitle: 'TailwindCSS'
 prevURL: '/docs/features/tailwindcss' 
 ---
 
 
 <div class="flex items-start px-5 py-5 mb-12 md:mb-5 mt-1 md:translate-y-0 translate-y-5 leading-[18px] bg-neutral-950 border border-yellow-400 rounded-md">
-   <img class="w-auto h-12 my-0 mr-5 md:h-20 md:block hidden" src="/assets/images/icons/action.png" />
+   <img class="hidden w-auto h-12 my-0 mr-5 md:h-20 md:block" src="/assets/images/icons/action.png" />
    <div>
       <h1 class="mb-0 text-base md:text-3xl">Github Action</h1>
       <p class="my-1">Use our github action to deploy your website easily to Github pages. Git push and your changes will automatically be deployed</p>

@@ -1,14 +1,14 @@
 ---
 title: Installing Static
 description: Learn how to install Static and start using it to build your next website.
-nextTitle: 'Folder Structure'
-nextURL: '/docs/folder-structure'
+nextTitle: 'Page Based Routing'
+nextURL: '/docs/features/page-based-routing'
 prevTitle: 'Getting Started'
 prevURL: '/docs/getting-started'
 ---
 
 <div class="flex items-start px-5 py-5 mb-12 md:mb-5 mt-1 md:translate-y-0 translate-y-5 leading-[18px] bg-neutral-950 border border-yellow-400 rounded-md">
-   <img class="w-auto h-12 my-0 mr-5 md:h-20 md:block hidden" src="/assets/images/icons/install.png" />
+   <img class="hidden w-auto h-12 my-0 mr-5 md:h-20 md:block" src="/assets/images/icons/install.png" />
    <div>
       <h1 class="mb-0 text-base md:text-3xl">Installation</h1>
       <p class="my-1">Installing Static is very easy. There are a few things you'll need in order to make this journey as seemless as possible. Here are a few pre-requisites.</p>

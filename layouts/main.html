@@ -96,6 +96,14 @@
         font-family: 'pistoleerhalfital';
       }  
     </style>
+    <script>
+      let templatesInitilized = false;
+      window.windowTemplates = null;
+    document.addEventListener('DOMContentLoaded', function() {
+      templatesInitilized = true; 
+      window.windowTemplates=JSON.parse('{collections.templates.json}'); 
+    });
+    </script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/powershell.min.js"></script>
@@ -142,7 +150,82 @@
     </div>
     
 
-    <div x-data="{ route: '/', leftSidebar: false }"
+    <div x-data="{ 
+          route: '/', 
+          leftSidebar: false,
+          templatePreview: false, 
+          templateDropdownShow: false,
+          iframeReady: false,
+          activeTemplate: null,
+          url: 'about:blank',
+          changeURL: function(url){
+            this.iframeReady=false;
+            this.url = url;
+          },
+          changeTheme: function(slug, url){
+            window.dispatchEvent(new CustomEvent('change-template', { detail : { slug: slug }}));
+            this.url = 'about:blank';
+            let that = this;
+            setTimeout(function(){
+                that.changeURL(url);
+                console.log('change');
+                console.log(slug);
+            }, 100);
+          },
+          templateInstallCommand(){
+            if(this.activeTemplate != null){
+                if(this.activeTemplate.slug == 'starter'){
+                    return 'static new project';
+                } else {
+                    return 'static new project --' + this.activeTemplate.slug;
+                }
+            }
+
+            return '';
+          },
+          setActiveTemplate: function(template_slug){
+                for(let i =0; i<window.windowTemplates.length; i++){
+                    if(window.windowTemplates[i].slug == template_slug){
+                        this.activeTemplate = window.windowTemplates[i];
+                    }
+                }
+                if(this.activeTemplate == 'undefined'){
+                    this.activeTemplate = {
+                        name: ''
+                    };
+                }
+            },
+            favicon: function(){
+                if(this.activeTemplate != null){
+                    return this.activeTemplate.favicon;
+                }
+                return '';
+            },
+            name: function(){
+                if(this.activeTemplate != null){
+                    return this.activeTemplate.name;
+                }
+                return '';
+            },
+            slug: function(){
+                if(this.activeTemplate != null){
+                    return this.activeTemplate.slug;
+                }
+                return '';
+            },
+            url: function(){
+                if(this.activeTemplate != null){
+                    return this.activeTemplate.url;
+                }
+                return '';
+            },
+            repo: function(){
+                if(this.activeTemplate != null){
+                    return this.activeTemplate.repo;
+                }
+                return '';
+            } 
+            }"
         x-init="
             $watch('leftSidebar', function(value){
                 if(value){
@@ -150,6 +233,8 @@
                 }
             })
         "
+        @show-template-preview.window="url=event.detail.url; if(window.innerWidth < 768){ window.open(url, '_blank'); }else{ templatePreview=true }" 
+        @set-active-template.window="setActiveTemplate(event.detail.slug);"
         @close-left-sidebar.window="leftSidebar = false"
         x-init="route=window.location.pathname" 
         @set-route.window="route=event.detail.route" id="site">
@@ -160,6 +245,7 @@
       <include src="footer.html"></include> 
     </div>
 
+    
     <script src="{ url('/assets/js/main.js') }"></script>
     <!-- <script>
       window.addEventListener('static:content', function(evt) {

@@ -1,10 +1,10 @@
 ---
 title: Static Folder Structure
 description: Learn about the folder structure in Static and how to organize your files.
-nextTitle: 'Page Based Routing'
-nextURL: '/docs/features/page-based-routing'
-prevTitle: 'Installation'
-prevURL: '/docs/install'
+nextTitle: null
+nextURL: null
+prevTitle: 'Deploying Your Site'
+prevURL: '/docs/guides/deploy'
 ---
 
 <div class="flex items-start px-5 py-5 mb-12 md:mb-5 mt-1 md:translate-y-0 translate-y-5 leading-[18px] bg-neutral-950 border border-yellow-400 rounded-md">
@@ -70,7 +70,3 @@ The .gitignore file is used to specify which files and folders should be ignored
 
 ### tailwind.config.js
 This is your Tailwind configuration file. If you are not going to use Tailwind you can remove this file.
-
----
-
-Next, let's move on to talking about how you add pages and routes to your website.
