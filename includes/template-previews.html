@@ -20,9 +20,9 @@
         
         
         @keydown.escape.window="templatePreview = false"
-        x-show="templatePreview" id="templates" class="z-[205] fixed inset-0 w-screen h-screen bg-black flex flex-col items-stretch" x-cloak>
+        x-show="templatePreview" id="templates" class="z-[205] fixed inset-0 w-screen h-screen bg-black flex flex-col items-stretch" style="display:none" x-cloak>
 
-    <div class="relative flex items-center z-20 justify-between w-screen border-b h-10 pb-0.5 bg-neutral-100 border-neutral-900">
+    <div class="relative flex items-center z-20 justify-between w-screen border-b h-10 pb-0.5 bg-neutral-100 border-neutral-900" x-cloak>
         <div :class="{ 'z-20' : templateDropdownShow }" class="relative flex items-start h-full" x-cloak>
 
 
