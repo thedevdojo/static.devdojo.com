@@ -18,6 +18,15 @@
         "repo" : "https://github.com/static-templates/blog"
     },
     {
+        "name" : "Boxed",
+        "cover" : "https://raw.githubusercontent.com/static-templates/boxed/main/assets/images/cover.jpg",
+        "favicon": "https://raw.githubusercontent.com/static-templates/boxed/main/assets/images/favicon.png",
+        "description": "A blog or portfolio template for your static website.",
+        "slug" : "boxed",
+        "url" : "https://boxed.devdojo.io",
+        "repo" : "https://github.com/static-templates/boxed"
+    },
+    {
         "name" : "Static Starter",
         "cover" : "https://raw.githubusercontent.com/static-templates/starter/main/assets/images/cover.jpg",
         "favicon": "https://raw.githubusercontent.com/static-templates/starter/main/assets/images/favicon.png",
