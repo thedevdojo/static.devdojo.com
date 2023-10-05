@@ -189,7 +189,7 @@
           showTemplatePreview: function(templateURL){
             this.iframeURL = 'about:blank';
             if(window.innerWidth < 768){ 
-              window.open(url, '_blank'); 
+              window.open(templateURL, '_blank'); 
             }else{ 
               this.templatePreview=true;
               let that = this;
