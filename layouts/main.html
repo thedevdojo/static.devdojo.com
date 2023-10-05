@@ -198,7 +198,7 @@
 
             return '';
           },
-          setActiveTemplate: function(template_slug){
+          setActiveTemplate(template_slug){
                 for(let i =0; i<window.windowTemplates.length; i++){
                     if(window.windowTemplates[i].slug == template_slug){
                         this.activeTemplate = window.windowTemplates[i];
@@ -210,31 +210,31 @@
                     };
                 }
             },
-            favicon: function(){
+            favicon(){
                 if(this.activeTemplate != null){
                     return this.activeTemplate.favicon;
                 }
                 return '';
             },
-            name: function(){
+            name(){
                 if(this.activeTemplate != null){
                     return this.activeTemplate.name;
                 }
                 return '';
             },
-            slug: function(){
+            slug(){
                 if(this.activeTemplate != null){
                     return this.activeTemplate.slug;
                 }
                 return '';
             },
-            url: function(){
+            get url(){
                 if(this.activeTemplate != null){
                     return this.activeTemplate.url;
                 }
                 return '';
             },
-            repo: function(){
+            get repo(){
                 if(this.activeTemplate != null){
                     return this.activeTemplate.repo;
                 }

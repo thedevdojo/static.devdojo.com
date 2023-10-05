@@ -27,6 +27,15 @@
         "repo" : "https://github.com/static-templates/boxed"
     },
     {
+        "name" : "C64",
+        "cover" : "https://raw.githubusercontent.com/static-templates/c64/main/assets/images/cover.jpg",
+        "favicon": "https://raw.githubusercontent.com/static-templates/c64/main/assets/images/favicon.png",
+        "description": "A retro-style blog template for your next blog or personal website.",
+        "slug" : "c64",
+        "url" : "https://c64.devdojo.io",
+        "repo" : "https://github.com/static-templates/c64"
+    },
+    {
         "name" : "Static Starter",
         "cover" : "https://raw.githubusercontent.com/static-templates/starter/main/assets/images/cover.jpg",
         "favicon": "https://raw.githubusercontent.com/static-templates/starter/main/assets/images/favicon.png",
