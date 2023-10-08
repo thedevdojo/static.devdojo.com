@@ -36,6 +36,15 @@
         "repo" : "https://github.com/static-templates/c64"
     },
     {
+        "name" : "Retroframe",
+        "cover" : "https://raw.githubusercontent.com/static-templates/retroframe/main/assets/images/cover.jpg",
+        "favicon": "https://raw.githubusercontent.com/static-templates/retroframe/main/assets/images/favicon.png",
+        "description": "A retro one-page resume template for your personal website.",
+        "slug" : "retroframe",
+        "url" : "https://retroframe.devdojo.io",
+        "repo" : "https://github.com/static-templates/retroframe"
+    },
+    {
         "name" : "Static Starter",
         "cover" : "https://raw.githubusercontent.com/static-templates/starter/main/assets/images/cover.jpg",
         "favicon": "https://raw.githubusercontent.com/static-templates/starter/main/assets/images/favicon.png",
