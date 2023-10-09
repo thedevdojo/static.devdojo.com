@@ -279,13 +279,14 @@
 
     
     <script src="{ url('/assets/js/main.js') }"></script>
-    <!-- <script>
-      window.addEventListener('static:content', function(evt) {
-    console.log('entered');
-    alert('got');
-    console.log(JSON.parse(evt.detail.toc));
-    window.dispatchEvent(new CustomEvent('set-toc', { detail: { toc: JSON.parse(evt.detail.toc) } }));
-});
-    </script> -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C905RXGGNC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-C905RXGGNC');
+    </script>
 </body>
 </html>
