@@ -86,6 +86,7 @@ x-init="
                 const widthPercentage = (this.lastKnownScrollY / maxScrollHeight) * 100;
 
                 targetElement.style.width = `${Math.min(widthPercentage, 100)}%`;
+                document.getElementById('bolt-yellow').style.height = `${Math.min(widthPercentage, 100)}%`;
                 this.ticking = false;
                 this.ticking = false;
             });
