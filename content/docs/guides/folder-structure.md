@@ -32,7 +32,7 @@ When you create a new **Static** website using the <code>static new</code> comma
 - 📄 tailwind.config.js
 ```
 
-Let's dive into each folder nad file to understand its contents and purpose.
+Let's dive into each folder and file to understand its contents and purpose.
 
 ## The Folders
 
