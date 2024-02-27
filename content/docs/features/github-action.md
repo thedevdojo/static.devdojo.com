@@ -3,8 +3,8 @@ title: Github Action
 description: Auto-deploy your website using the Static Github action
 nextTitle: 'Deploying Your Site'
 nextURL: '/docs/guides/deploy'
-prevTitle: 'TailwindCSS'
-prevURL: '/docs/features/tailwindcss' 
+prevTitle: 'Configurations'
+prevURL: '/docs/features/configurations' 
 ---
 
 
