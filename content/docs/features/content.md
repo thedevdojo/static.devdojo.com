@@ -1,14 +1,14 @@
 ---
 title: Static Content
 description: Learn how to add content to your website
-nextTitle: 'Live-Reloading'
-nextURL: '/docs/features/live-reloading'
+nextTitle: 'helpers'
+nextURL: '/docs/features/helpers'
 prevTitle: 'Collections'
 prevURL: '/docs/features/collections'
 ---
 
 <div class="flex items-start px-5 py-5 mb-12 md:mb-5 mt-1 md:translate-y-0 translate-y-5 leading-[18px] bg-neutral-950 border border-yellow-400 rounded-md">
-   <img class="w-auto h-12 my-0 mr-5 md:h-20 md:block hidden" src="/assets/images/icons/content.png" />
+   <img class="hidden w-auto h-12 my-0 mr-5 md:h-20 md:block" src="/assets/images/icons/content.png" />
    <div>
       <h1 class="mb-0 text-base md:text-3xl">Content</h1>
       <p class="my-1">Learn how to create and manage content for your Static website using Markdown files and content pages.</p>
