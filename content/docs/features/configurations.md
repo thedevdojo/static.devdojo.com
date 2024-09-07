@@ -31,4 +31,28 @@ If you wish to add custom headers in your requests, you can include the "headers
 }
 ```
 
-Feel free to open a PR and request any additional options that can be passed in via the static.json file.
+# Custom Build Directory and URL
+
+You can customize the directory your site will build to and you may also specify the website URL.
+
+```json
+{
+    "dev" : {
+        "url" : "http://localhost:3000"
+    },
+    "build" : {
+        "url" : "https://websitename.com/cool",
+        "directory" : "/directory/to/build/path"
+    }
+ }
+ ```
+
+> Notice that if you specify the `build.url`, you will also need to specify the `dev.url`.
+
+The `directory` path is the folder your site will be generated when running `static build`. The `url` can be used inside your HTML files in order to specify an absolute path.
+
+```
+<script src="{ url('/assets/js/main.js') }"></script>
+```
+
+This is the **url** helper method. Learn <a href="/docs/features/helpers">more about helpers here</a>.
