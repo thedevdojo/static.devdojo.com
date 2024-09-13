@@ -180,10 +180,6 @@ This will render the following HTML:
 
 The **loop** variable will start at **1** and it will increment each time the loop iterates.
 
-Here is the English translation of the "Custom Pagination" section from the document, keeping in line with the professional, clear, and concise style of the rest of the content:
-
----
-
 ## Pagination
 
 You can add pagination logic to any `<ForEach></ForEach>` loop.
