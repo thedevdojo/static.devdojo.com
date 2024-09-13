@@ -180,6 +180,66 @@ This will render the following HTML:
 
 The **loop** variable will start at **1** and it will increment each time the loop iterates.
 
+## Pagination
+
+You can add pagination logic to any `<ForEach></ForEach>` loop.
+
+First, add a unique `iteratorKey` to the loop, for example:
+
+```html
+<ForEach content="post" as="post" count="{count}" iteratorKey="posts-loop">
+```
+
+Next, include a `<paginator>` within the `<ForEach></ForEach>` loop. 
+
+This structure must contain two `<a>` tags and use "**prev**" and "**next**" to specify the switching direction, for example:
+
+```html
+<ForEach content="post" as="post" count="{count}" iteratorKey="posts-loop">
+    <div>
+        ...
+    </div>
+    <paginator>
+        <div class="w-full flex justify-between">
+            <a prev>
+                Prev
+            </a>
+            <a next>
+                Next
+            </a>
+        </div>
+    </paginator>
+</ForEach>
+```
+
+> You are free to customize the content and style within `<paginator></paginator>`, just ensure it contains two `<a>` tags, with the keywords prev and next.
+
+Finally, specify the pagination logic in your `static.json` configuration file:
+
+```json
+{
+    "paginationList" : [
+        {
+            "route": "/posts",
+            "iteratorKey":"posts-loop",
+            "pageSize": 2
+        }
+    ]
+}
+```
+
++ `route` specifies the page where pagination logic needs to be added.
++ `iteratorKey` determines which `<Foreach>` structure on the route page is assigned pagination logic.
++ `pageSize` determines how many items to display per page. 
+
+For instance, if the `count` is 10 and `pageSize` is 5, it will generate 2 sub-pages. The first sub-page displays items 1-5, and the second displays items 6-10.
+
+
+
+Please consult the **/Configurations/Pagination** section for additional details.
+
+
+
 ## Conclusion
 
 Collections are a powerful feature that allow you to organize and loop through sets of data in your static website. If you want to create long copy **text** such as posts or articles, you'll probably want to use Statics **content** feature for that. Let's discuss that next.
